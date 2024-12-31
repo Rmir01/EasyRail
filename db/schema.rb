@@ -10,8 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_30_114625) do
-  create_table "treno_completos", force: :cascade do |t|
+ActiveRecord::Schema[8.0].define(version: 2024_12_31_123636) do
+  create_table "tratta", primary_key: ["cod", "part", "dest"], force: :cascade do |t|
+    t.integer "cod"
+    t.string "part"
+    t.string "dest"
+    t.string "hpar"
+    t.string "harr"
+    t.integer "pe"
+    t.integer "pp"
+    t.check_constraint "pe > 0", name: "minimum_price_check"
+    t.check_constraint "pp > pe + 10", name: "price_check"
+  end
+
+  create_table "trenos", force: :cascade do |t|
     t.string "f0"
     t.string "f1"
     t.string "f2"
@@ -24,7 +36,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_30_114625) do
     t.string "hf3"
     t.string "hf4"
     t.string "hf5"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "tratta", "trenos", column: "cod"
 end
