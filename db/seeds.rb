@@ -714,3 +714,3864 @@ more_treno = [
 more_treno.each do |treno|
 	Treno.create(treno)
 end
+
+more_tratta = [
+
+	{
+	:cod => 1000,
+	:part => 'Napoli Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '5:',
+	:harr => '10:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1000,
+	:part => 'Napoli Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '5:',
+	:harr => '9:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1000,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '5:',
+	:harr => '8:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1000,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '5:',
+	:harr => '7:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1000,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '5:',
+	:harr => '6:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1000,
+	:part => 'Roma Termini',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '6:',
+	:harr => '10:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1000,
+	:part => 'Roma Termini',
+	:dest => 'Milano Centrale',
+	:hpar => '6:',
+	:harr => '9:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1000,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '6:',
+	:harr => '8:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1000,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '6:',
+	:harr => '7:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1000,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '7:',
+	:harr => '10:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1000,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Milano Centrale',
+	:hpar => '7:',
+	:harr => '9:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1000,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '7:',
+	:harr => '8:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1000,
+	:part => 'Bologna Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '8:',
+	:harr => '10:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1000,
+	:part => 'Bologna Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '8:',
+	:harr => '9:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1000,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '9:',
+	:harr => '10:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1002,
+	:part => 'Napoli Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '7:',
+	:harr => '12:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1002,
+	:part => 'Napoli Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '7:',
+	:harr => '11:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1002,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '7:',
+	:harr => '10:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1002,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '7:',
+	:harr => '9:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1002,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '7:',
+	:harr => '8:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1002,
+	:part => 'Roma Termini',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '8:',
+	:harr => '12:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1002,
+	:part => 'Roma Termini',
+	:dest => 'Milano Centrale',
+	:hpar => '8:',
+	:harr => '11:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1002,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '8:',
+	:harr => '10:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1002,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '8:',
+	:harr => '9:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1002,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '9:',
+	:harr => '12:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1002,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Milano Centrale',
+	:hpar => '9:',
+	:harr => '11:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1002,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '9:',
+	:harr => '10:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1002,
+	:part => 'Bologna Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '10:',
+	:harr => '12:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1002,
+	:part => 'Bologna Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '10:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1002,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '11:',
+	:harr => '12:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1004,
+	:part => 'Napoli Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '9:',
+	:harr => '14:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1004,
+	:part => 'Napoli Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '9:',
+	:harr => '13:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1004,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '9:',
+	:harr => '12:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1004,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '9:',
+	:harr => '11:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1004,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '9:',
+	:harr => '10:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1004,
+	:part => 'Roma Termini',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '10:',
+	:harr => '14:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1004,
+	:part => 'Roma Termini',
+	:dest => 'Milano Centrale',
+	:hpar => '10:',
+	:harr => '13:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1004,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '10:',
+	:harr => '12:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1004,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '10:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1004,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '11:',
+	:harr => '14:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1004,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Milano Centrale',
+	:hpar => '11:',
+	:harr => '13:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1004,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '11:',
+	:harr => '12:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1004,
+	:part => 'Bologna Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '12:',
+	:harr => '14:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1004,
+	:part => 'Bologna Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '12:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1004,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '13:',
+	:harr => '14:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1006,
+	:part => 'Napoli Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '11:',
+	:harr => '16:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1006,
+	:part => 'Napoli Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '11:',
+	:harr => '15:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1006,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '11:',
+	:harr => '14:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1006,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '11:',
+	:harr => '13:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1006,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '11:',
+	:harr => '12:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1006,
+	:part => 'Roma Termini',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '12:',
+	:harr => '16:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1006,
+	:part => 'Roma Termini',
+	:dest => 'Milano Centrale',
+	:hpar => '12:',
+	:harr => '15:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1006,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '12:',
+	:harr => '14:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1006,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '12:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1006,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '13:',
+	:harr => '16:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1006,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Milano Centrale',
+	:hpar => '13:',
+	:harr => '15:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1006,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '13:',
+	:harr => '14:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1006,
+	:part => 'Bologna Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '14:',
+	:harr => '16:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1006,
+	:part => 'Bologna Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '14:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1006,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '15:',
+	:harr => '16:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1008,
+	:part => 'Napoli Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '13:',
+	:harr => '18:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1008,
+	:part => 'Napoli Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '13:',
+	:harr => '17:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1008,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '13:',
+	:harr => '16:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1008,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '13:',
+	:harr => '15:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1008,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '13:',
+	:harr => '14:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1008,
+	:part => 'Roma Termini',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '14:',
+	:harr => '18:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1008,
+	:part => 'Roma Termini',
+	:dest => 'Milano Centrale',
+	:hpar => '14:',
+	:harr => '17:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1008,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '14:',
+	:harr => '16:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1008,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '14:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1008,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '15:',
+	:harr => '18:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1008,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Milano Centrale',
+	:hpar => '15:',
+	:harr => '17:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1008,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '15:',
+	:harr => '16:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1008,
+	:part => 'Bologna Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '16:',
+	:harr => '18:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1008,
+	:part => 'Bologna Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '16:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1008,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '17:',
+	:harr => '18:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1010,
+	:part => 'Napoli Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '15:',
+	:harr => '20:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1010,
+	:part => 'Napoli Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '15:',
+	:harr => '19:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1010,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '15:',
+	:harr => '18:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1010,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '15:',
+	:harr => '17:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1010,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '15:',
+	:harr => '16:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1010,
+	:part => 'Roma Termini',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '16:',
+	:harr => '20:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1010,
+	:part => 'Roma Termini',
+	:dest => 'Milano Centrale',
+	:hpar => '16:',
+	:harr => '19:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1010,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '16:',
+	:harr => '18:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1010,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '16:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1010,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '17:',
+	:harr => '20:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1010,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Milano Centrale',
+	:hpar => '17:',
+	:harr => '19:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1010,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '17:',
+	:harr => '18:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1010,
+	:part => 'Bologna Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '18:',
+	:harr => '20:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1010,
+	:part => 'Bologna Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '18:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1010,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '19:',
+	:harr => '20:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1012,
+	:part => 'Napoli Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '17:',
+	:harr => '22:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1012,
+	:part => 'Napoli Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '17:',
+	:harr => '21:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1012,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '17:',
+	:harr => '20:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1012,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '17:',
+	:harr => '19:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1012,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '17:',
+	:harr => '18:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1012,
+	:part => 'Roma Termini',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '18:',
+	:harr => '22:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1012,
+	:part => 'Roma Termini',
+	:dest => 'Milano Centrale',
+	:hpar => '18:',
+	:harr => '21:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1012,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '18:',
+	:harr => '20:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1012,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '18:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1012,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '19:',
+	:harr => '22:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1012,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Milano Centrale',
+	:hpar => '19:',
+	:harr => '21:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1012,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '19:',
+	:harr => '20:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1012,
+	:part => 'Bologna Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '20:',
+	:harr => '22:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1012,
+	:part => 'Bologna Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '20:',
+	:harr => '21:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1012,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '21:',
+	:harr => '22:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1014,
+	:part => 'Napoli Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '19:',
+	:harr => '23:59',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1014,
+	:part => 'Napoli Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '19:',
+	:harr => '23:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1014,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '19:',
+	:harr => '22:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1014,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '19:',
+	:harr => '21:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1014,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '19:',
+	:harr => '20:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1014,
+	:part => 'Roma Termini',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '20:',
+	:harr => '23:59',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1014,
+	:part => 'Roma Termini',
+	:dest => 'Milano Centrale',
+	:hpar => '20:',
+	:harr => '23:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1014,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '20:',
+	:harr => '22:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1014,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '20:',
+	:harr => '21:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1014,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '21:',
+	:harr => '23:59',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1014,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Milano Centrale',
+	:hpar => '21:',
+	:harr => '23:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1014,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '21:',
+	:harr => '22:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1014,
+	:part => 'Bologna Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '22:',
+	:harr => '23:59',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1014,
+	:part => 'Bologna Centrale',
+	:dest => 'Milano Centrale',
+	:hpar => '22:',
+	:harr => '23:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1014,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '23:',
+	:harr => '23:59',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1001,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Napoli Centrale',
+	:hpar => '5:',
+	:harr => '10:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1001,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Roma Termini',
+	:hpar => '5:',
+	:harr => '9:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1001,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '5:',
+	:harr => '8:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1001,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Bologna Centrale',
+	:hpar => '5:',
+	:harr => '7:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1001,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '5:',
+	:harr => '6:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1001,
+	:part => 'Milano Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '6:',
+	:harr => '10:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1001,
+	:part => 'Milano Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '6:',
+	:harr => '9:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1001,
+	:part => 'Milano Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '6:',
+	:harr => '8:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1001,
+	:part => 'Milano Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '6:',
+	:harr => '7:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1001,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '7:',
+	:harr => '10:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1001,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '7:',
+	:harr => '9:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1001,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '7:',
+	:harr => '8:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1001,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '8:',
+	:harr => '10:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1001,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '8:',
+	:harr => '9:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1001,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '9:',
+	:harr => '10:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1003,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Napoli Centrale',
+	:hpar => '7:',
+	:harr => '12:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1003,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Roma Termini',
+	:hpar => '7:',
+	:harr => '11:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1003,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '7:',
+	:harr => '10:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1003,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Bologna Centrale',
+	:hpar => '7:',
+	:harr => '9:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1003,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '7:',
+	:harr => '8:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1003,
+	:part => 'Milano Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '8:',
+	:harr => '12:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1003,
+	:part => 'Milano Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '8:',
+	:harr => '11:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1003,
+	:part => 'Milano Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '8:',
+	:harr => '10:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1003,
+	:part => 'Milano Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '8:',
+	:harr => '9:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1003,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '9:',
+	:harr => '12:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1003,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '9:',
+	:harr => '11:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1003,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '9:',
+	:harr => '10:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1003,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '10:',
+	:harr => '12:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1003,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '10:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1003,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '11:',
+	:harr => '12:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1005,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Napoli Centrale',
+	:hpar => '9:',
+	:harr => '14:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1005,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Roma Termini',
+	:hpar => '9:',
+	:harr => '13:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1005,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '9:',
+	:harr => '12:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1005,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Bologna Centrale',
+	:hpar => '9:',
+	:harr => '11:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1005,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '9:',
+	:harr => '10:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1005,
+	:part => 'Milano Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '10:',
+	:harr => '14:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1005,
+	:part => 'Milano Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '10:',
+	:harr => '13:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1005,
+	:part => 'Milano Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '10:',
+	:harr => '12:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1005,
+	:part => 'Milano Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '10:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1005,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '11:',
+	:harr => '14:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1005,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '11:',
+	:harr => '13:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1005,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '11:',
+	:harr => '12:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1005,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '12:',
+	:harr => '14:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1005,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '12:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1005,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '13:',
+	:harr => '14:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1007,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Napoli Centrale',
+	:hpar => '11:',
+	:harr => '16:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1007,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Roma Termini',
+	:hpar => '11:',
+	:harr => '15:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1007,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '11:',
+	:harr => '14:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1007,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Bologna Centrale',
+	:hpar => '11:',
+	:harr => '13:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1007,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '11:',
+	:harr => '12:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1007,
+	:part => 'Milano Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '12:',
+	:harr => '16:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1007,
+	:part => 'Milano Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '12:',
+	:harr => '15:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1007,
+	:part => 'Milano Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '12:',
+	:harr => '14:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1007,
+	:part => 'Milano Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '12:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1007,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '13:',
+	:harr => '16:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1007,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '13:',
+	:harr => '15:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1007,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '13:',
+	:harr => '14:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1007,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '14:',
+	:harr => '16:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1007,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '14:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1007,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '15:',
+	:harr => '16:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1009,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Napoli Centrale',
+	:hpar => '13:',
+	:harr => '18:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1009,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Roma Termini',
+	:hpar => '13:',
+	:harr => '17:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1009,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '13:',
+	:harr => '16:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1009,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Bologna Centrale',
+	:hpar => '13:',
+	:harr => '15:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1009,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '13:',
+	:harr => '14:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1009,
+	:part => 'Milano Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '14:',
+	:harr => '18:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1009,
+	:part => 'Milano Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '14:',
+	:harr => '17:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1009,
+	:part => 'Milano Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '14:',
+	:harr => '16:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1009,
+	:part => 'Milano Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '14:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1009,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '15:',
+	:harr => '18:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1009,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '15:',
+	:harr => '17:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1009,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '15:',
+	:harr => '16:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1009,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '16:',
+	:harr => '18:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1009,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '16:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1009,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '17:',
+	:harr => '18:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1011,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Napoli Centrale',
+	:hpar => '15:',
+	:harr => '20:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1011,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Roma Termini',
+	:hpar => '15:',
+	:harr => '19:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1011,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '15:',
+	:harr => '18:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1011,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Bologna Centrale',
+	:hpar => '15:',
+	:harr => '17:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1011,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '15:',
+	:harr => '16:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1011,
+	:part => 'Milano Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '16:',
+	:harr => '20:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1011,
+	:part => 'Milano Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '16:',
+	:harr => '19:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1011,
+	:part => 'Milano Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '16:',
+	:harr => '18:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1011,
+	:part => 'Milano Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '16:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1011,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '17:',
+	:harr => '20:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1011,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '17:',
+	:harr => '19:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1011,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '17:',
+	:harr => '18:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1011,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '18:',
+	:harr => '20:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1011,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '18:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1011,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '19:',
+	:harr => '20:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1013,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Napoli Centrale',
+	:hpar => '17:',
+	:harr => '22:',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1013,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Roma Termini',
+	:hpar => '17:',
+	:harr => '21:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1013,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '17:',
+	:harr => '20:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1013,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Bologna Centrale',
+	:hpar => '17:',
+	:harr => '19:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1013,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '17:',
+	:harr => '18:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1013,
+	:part => 'Milano Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '18:',
+	:harr => '22:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1013,
+	:part => 'Milano Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '18:',
+	:harr => '21:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1013,
+	:part => 'Milano Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '18:',
+	:harr => '20:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1013,
+	:part => 'Milano Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '18:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1013,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '19:',
+	:harr => '22:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1013,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '19:',
+	:harr => '21:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1013,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '19:',
+	:harr => '20:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1013,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '20:',
+	:harr => '22:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1013,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '20:',
+	:harr => '21:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1013,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '21:',
+	:harr => '22:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1015,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Napoli Centrale',
+	:hpar => '19:',
+	:harr => '23:59',
+	:pe => 50,
+	:pp => 60
+	},
+	{
+	:cod => 1015,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Roma Termini',
+	:hpar => '19:',
+	:harr => '23:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1015,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '19:',
+	:harr => '22:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1015,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Bologna Centrale',
+	:hpar => '19:',
+	:harr => '21:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1015,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '19:',
+	:harr => '20:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1015,
+	:part => 'Milano Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '20:',
+	:harr => '23:59',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1015,
+	:part => 'Milano Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '20:',
+	:harr => '23:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1015,
+	:part => 'Milano Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '20:',
+	:harr => '22:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1015,
+	:part => 'Milano Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '20:',
+	:harr => '21:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1015,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '21:',
+	:harr => '23:59',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1015,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '21:',
+	:harr => '23:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1015,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '21:',
+	:harr => '22:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1015,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '22:',
+	:harr => '23:59',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1015,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '22:',
+	:harr => '23:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1015,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '23:',
+	:harr => '23:59',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1050,
+	:part => 'Napoli Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '6:',
+	:harr => '11:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1050,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '6:',
+	:harr => '9:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1050,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '6:',
+	:harr => '8:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1050,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '6:',
+	:harr => '7:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1050,
+	:part => 'Roma Termini',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '7:',
+	:harr => '11:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1050,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '7:',
+	:harr => '9:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1050,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '7:',
+	:harr => '8:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1050,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '8:',
+	:harr => '11:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1050,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '8:',
+	:harr => '9:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1050,
+	:part => 'Bologna Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '9:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1052,
+	:part => 'Napoli Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '8:',
+	:harr => '13:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1052,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '8:',
+	:harr => '11:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1052,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '8:',
+	:harr => '10:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1052,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '8:',
+	:harr => '9:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1052,
+	:part => 'Roma Termini',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '9:',
+	:harr => '13:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1052,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '9:',
+	:harr => '11:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1052,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '9:',
+	:harr => '10:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1052,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '10:',
+	:harr => '13:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1052,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '10:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1052,
+	:part => 'Bologna Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '11:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1054,
+	:part => 'Napoli Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '10:',
+	:harr => '15:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1054,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '10:',
+	:harr => '13:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1054,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '10:',
+	:harr => '12:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1054,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '10:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1054,
+	:part => 'Roma Termini',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '11:',
+	:harr => '15:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1054,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '11:',
+	:harr => '13:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1054,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '11:',
+	:harr => '12:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1054,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '12:',
+	:harr => '15:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1054,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '12:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1054,
+	:part => 'Bologna Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '13:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1056,
+	:part => 'Napoli Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '12:',
+	:harr => '17:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1056,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '12:',
+	:harr => '15:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1056,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '12:',
+	:harr => '14:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1056,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '12:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1056,
+	:part => 'Roma Termini',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '13:',
+	:harr => '17:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1056,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '13:',
+	:harr => '15:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1056,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '13:',
+	:harr => '14:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1056,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '14:',
+	:harr => '17:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1056,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '14:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1056,
+	:part => 'Bologna Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '15:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1058,
+	:part => 'Napoli Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '14:',
+	:harr => '19:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1058,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '14:',
+	:harr => '17:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1058,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '14:',
+	:harr => '16:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1058,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '14:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1058,
+	:part => 'Roma Termini',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '15:',
+	:harr => '19:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1058,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '15:',
+	:harr => '17:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1058,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '15:',
+	:harr => '16:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1058,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '16:',
+	:harr => '19:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1058,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '16:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1058,
+	:part => 'Bologna Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '17:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1060,
+	:part => 'Napoli Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '16:',
+	:harr => '21:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1060,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '16:',
+	:harr => '19:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1060,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '16:',
+	:harr => '18:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1060,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '16:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1060,
+	:part => 'Roma Termini',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '17:',
+	:harr => '21:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1060,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '17:',
+	:harr => '19:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1060,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '17:',
+	:harr => '18:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1060,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '18:',
+	:harr => '21:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1060,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '18:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1060,
+	:part => 'Bologna Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '19:',
+	:harr => '21:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1062,
+	:part => 'Napoli Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '18:',
+	:harr => '23:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1062,
+	:part => 'Napoli Centrale',
+	:dest => 'Bologna Centrale',
+	:hpar => '18:',
+	:harr => '21:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1062,
+	:part => 'Napoli Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '18:',
+	:harr => '20:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1062,
+	:part => 'Napoli Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '18:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1062,
+	:part => 'Roma Termini',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '19:',
+	:harr => '23:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1062,
+	:part => 'Roma Termini',
+	:dest => 'Bologna Centrale',
+	:hpar => '19:',
+	:harr => '21:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1062,
+	:part => 'Roma Termini',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '19:',
+	:harr => '20:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1062,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '20:',
+	:harr => '23:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1062,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Bologna Centrale',
+	:hpar => '20:',
+	:harr => '21:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1062,
+	:part => 'Bologna Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '21:',
+	:harr => '23:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1051,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Napoli Centrale',
+	:hpar => '6:',
+	:harr => '11:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1051,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Roma Termini',
+	:hpar => '6:',
+	:harr => '10:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1051,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '6:',
+	:harr => '9:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1051,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Bologna Centrale',
+	:hpar => '6:',
+	:harr => '8:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1051,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '8:',
+	:harr => '11:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1051,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '8:',
+	:harr => '10:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1051,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '8:',
+	:harr => '9:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1051,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '9:',
+	:harr => '11:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1051,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '9:',
+	:harr => '10:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1051,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '10:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1053,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Napoli Centrale',
+	:hpar => '8:',
+	:harr => '13:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1053,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Roma Termini',
+	:hpar => '8:',
+	:harr => '12:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1053,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '8:',
+	:harr => '11:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1053,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Bologna Centrale',
+	:hpar => '8:',
+	:harr => '10:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1053,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '10:',
+	:harr => '13:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1053,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '10:',
+	:harr => '12:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1053,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '10:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1053,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '11:',
+	:harr => '13:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1053,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '11:',
+	:harr => '12:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1053,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '12:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1055,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Napoli Centrale',
+	:hpar => '10:',
+	:harr => '15:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1055,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Roma Termini',
+	:hpar => '10:',
+	:harr => '14:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1055,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '10:',
+	:harr => '13:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1055,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Bologna Centrale',
+	:hpar => '10:',
+	:harr => '12:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1055,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '12:',
+	:harr => '15:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1055,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '12:',
+	:harr => '14:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1055,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '12:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1055,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '13:',
+	:harr => '15:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1055,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '13:',
+	:harr => '14:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1055,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '14:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1057,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Napoli Centrale',
+	:hpar => '12:',
+	:harr => '17:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1057,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Roma Termini',
+	:hpar => '12:',
+	:harr => '16:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1057,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '12:',
+	:harr => '15:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1057,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Bologna Centrale',
+	:hpar => '12:',
+	:harr => '14:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1057,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '14:',
+	:harr => '17:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1057,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '14:',
+	:harr => '16:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1057,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '14:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1057,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '15:',
+	:harr => '17:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1057,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '15:',
+	:harr => '16:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1057,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '16:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1059,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Napoli Centrale',
+	:hpar => '14:',
+	:harr => '19:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1059,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Roma Termini',
+	:hpar => '14:',
+	:harr => '18:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1059,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '14:',
+	:harr => '17:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1059,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Bologna Centrale',
+	:hpar => '14:',
+	:harr => '16:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1059,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '16:',
+	:harr => '19:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1059,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '16:',
+	:harr => '18:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1059,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '16:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1059,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '17:',
+	:harr => '19:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1059,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '17:',
+	:harr => '18:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1059,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '18:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1061,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Napoli Centrale',
+	:hpar => '16:',
+	:harr => '21:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1061,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Roma Termini',
+	:hpar => '16:',
+	:harr => '20:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1061,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '16:',
+	:harr => '19:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1061,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Bologna Centrale',
+	:hpar => '16:',
+	:harr => '18:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1061,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '18:',
+	:harr => '21:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1061,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '18:',
+	:harr => '20:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1061,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '18:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1061,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '19:',
+	:harr => '21:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1061,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '19:',
+	:harr => '20:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1061,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '20:',
+	:harr => '21:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1063,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Napoli Centrale',
+	:hpar => '18:',
+	:harr => '23:',
+	:pe => 40,
+	:pp => 50
+	},
+	{
+	:cod => 1063,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Roma Termini',
+	:hpar => '18:',
+	:harr => '22:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1063,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '18:',
+	:harr => '21:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1063,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Bologna Centrale',
+	:hpar => '18:',
+	:harr => '20:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1063,
+	:part => 'Bologna Centrale',
+	:dest => 'Napoli Centrale',
+	:hpar => '20:',
+	:harr => '23:',
+	:pe => 30,
+	:pp => 40
+	},
+	{
+	:cod => 1063,
+	:part => 'Bologna Centrale',
+	:dest => 'Roma Termini',
+	:hpar => '20:',
+	:harr => '22:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1063,
+	:part => 'Bologna Centrale',
+	:dest => 'Firenze Santa Maria Novella',
+	:hpar => '20:',
+	:harr => '21:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1063,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Napoli Centrale',
+	:hpar => '21:',
+	:harr => '23:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1063,
+	:part => 'Firenze Santa Maria Novella',
+	:dest => 'Roma Termini',
+	:hpar => '21:',
+	:harr => '22:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1063,
+	:part => 'Roma Termini',
+	:dest => 'Napoli Centrale',
+	:hpar => '22:',
+	:harr => '23:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1100,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '6:',
+	:harr => '9:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1100,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '6:',
+	:harr => '7:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1100,
+	:part => 'Milano Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '7:',
+	:harr => '9:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1102,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '8:',
+	:harr => '11:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1102,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '8:',
+	:harr => '9:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1102,
+	:part => 'Milano Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '9:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1104,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '10:',
+	:harr => '13:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1104,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '10:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1104,
+	:part => 'Milano Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '11:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1106,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '12:',
+	:harr => '15:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1106,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '12:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1106,
+	:part => 'Milano Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '13:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1108,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '14:',
+	:harr => '17:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1108,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '14:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1108,
+	:part => 'Milano Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '15:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1110,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '16:',
+	:harr => '19:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1110,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '16:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1110,
+	:part => 'Milano Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '17:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1112,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '18:',
+	:harr => '21:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1112,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '18:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1112,
+	:part => 'Milano Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '19:',
+	:harr => '21:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1114,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '20:',
+	:harr => '23:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1114,
+	:part => 'Torino Porta Nuova',
+	:dest => 'Milano Centrale',
+	:hpar => '20:',
+	:harr => '21:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1114,
+	:part => 'Milano Centrale',
+	:dest => 'Venezia Santa Lucia',
+	:hpar => '21:',
+	:harr => '23:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1101,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '6:',
+	:harr => '9:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1101,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Milano Centrale',
+	:hpar => '6:',
+	:harr => '8:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1101,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '8:',
+	:harr => '9:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1103,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '8:',
+	:harr => '11:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1103,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Milano Centrale',
+	:hpar => '8:',
+	:harr => '10:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1103,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '10:',
+	:harr => '11:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1105,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '10:',
+	:harr => '13:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1105,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Milano Centrale',
+	:hpar => '10:',
+	:harr => '12:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1105,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '12:',
+	:harr => '13:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1107,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '12:',
+	:harr => '15:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1107,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Milano Centrale',
+	:hpar => '12:',
+	:harr => '14:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1107,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '14:',
+	:harr => '15:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1109,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '14:',
+	:harr => '17:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1109,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Milano Centrale',
+	:hpar => '14:',
+	:harr => '16:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1109,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '16:',
+	:harr => '17:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1111,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '16:',
+	:harr => '19:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1111,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Milano Centrale',
+	:hpar => '16:',
+	:harr => '18:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1111,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '18:',
+	:harr => '19:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1113,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '18:',
+	:harr => '21:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1113,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Milano Centrale',
+	:hpar => '18:',
+	:harr => '20:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1113,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '20:',
+	:harr => '21:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1115,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '20:',
+	:harr => '23:',
+	:pe => 20,
+	:pp => 30
+	},
+	{
+	:cod => 1115,
+	:part => 'Venezia Santa Lucia',
+	:dest => 'Milano Centrale',
+	:hpar => '20:',
+	:harr => '22:',
+	:pe => 10,
+	:pp => 20
+	},
+	{
+	:cod => 1115,
+	:part => 'Milano Centrale',
+	:dest => 'Torino Porta Nuova',
+	:hpar => '22:',
+	:harr => '23:',
+	:pe => 10,
+	:pp => 20
+	}
+
+]
+
+more_tratta.each do |tratta|
+	Tratta.create(tratta)
+end

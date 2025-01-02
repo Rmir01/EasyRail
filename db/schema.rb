@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_31_123636) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_31_175221) do
   create_table "tratta", primary_key: ["cod", "part", "dest"], force: :cascade do |t|
     t.integer "cod"
     t.string "part"
@@ -20,7 +20,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_31_123636) do
     t.integer "pe"
     t.integer "pp"
     t.check_constraint "pe > 0", name: "minimum_price_check"
-    t.check_constraint "pp > pe + 10", name: "price_check"
+    t.check_constraint "pp = pe + 10", name: "price_check"
   end
 
   create_table "trenos", force: :cascade do |t|
