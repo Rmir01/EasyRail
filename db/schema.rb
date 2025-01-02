@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_31_175221) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_02_182324) do
   create_table "tratta", primary_key: ["cod", "part", "dest"], force: :cascade do |t|
     t.integer "cod"
     t.string "part"
@@ -36,6 +36,12 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_31_175221) do
     t.string "hf3"
     t.string "hf4"
     t.string "hf5"
+  end
+
+  create_table "utente", primary_key: "email", id: :string, force: :cascade do |t|
+    t.string "password"
+    t.string "nome"
+    t.string "cognome"
   end
 
   add_foreign_key "tratta", "trenos", column: "cod"
