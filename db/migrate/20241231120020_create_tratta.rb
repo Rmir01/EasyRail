@@ -10,9 +10,11 @@ class CreateTratta < ActiveRecord::Migration[8.0]
       t.integer 'pp'    #prezzo prima classe
     end
 
-    add_check_constraint :tratta, "pp > pe + 10", name: "price_check"
+    add_check_constraint :tratta, "pe > 0", name: "min_price_check"
+
+    add_check_constraint :tratta, "pp = pe + 10", name: "p_e_price_check"
     
-    add_foreign_key :tratta, :trenos, column: :cod, primary_key: :id
+    add_foreign_key :tratta, :treno, column: :cod, primary_key: :id
     #FOREIGN KEY (codice) REFERENCES trenoCompleto(codice)
   end
 end

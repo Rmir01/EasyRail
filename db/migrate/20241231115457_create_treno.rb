@@ -1,6 +1,6 @@
 class CreateTreno < ActiveRecord::Migration[8.0]
   def change
-    create_table :trenos, id:false do |t|
+    create_table :treno, id:false do |t|
       t.integer :id, primary_key:true
       t.string 'f0'
       t.string 'f1'

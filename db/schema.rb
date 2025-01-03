@@ -19,11 +19,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_02_182324) do
     t.string "harr"
     t.integer "pe"
     t.integer "pp"
-    t.check_constraint "pe > 0", name: "minimum_price_check"
-    t.check_constraint "pp = pe + 10", name: "price_check"
+    t.check_constraint "pe > 0", name: "min_price_check"
+    t.check_constraint "pp = pe + 10", name: "p_e_price_check"
   end
 
-  create_table "trenos", force: :cascade do |t|
+  create_table "treno", force: :cascade do |t|
     t.string "f0"
     t.string "f1"
     t.string "f2"
@@ -44,5 +44,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_02_182324) do
     t.string "cognome"
   end
 
-  add_foreign_key "tratta", "trenos", column: "cod"
+  add_foreign_key "tratta", "treno", column: "cod"
 end

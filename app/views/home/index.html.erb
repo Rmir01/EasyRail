@@ -16,7 +16,7 @@
 	</style>
 </head>
 <body>
-	<main style="background: url(@images[1]) no-repeat; background-size: cover; background-position: center;">
+	<main style="background: url('<%= asset_path('back3.jpg') %>'); no-repeat; background-size: cover; background-position: center;">
 		<!--Barra superiore-->
 		<header class="topnav">
 			<nav>
@@ -75,7 +75,7 @@
 						Si informa inoltre che al momento è possibile prenotare viaggi fino al 30/06/2025, poiché le date successive sono ancora da assegnare.
 					</p>
 				</li>
-				<li class="carousel__slide" style="text-align: right;">
+				<li class="carousel__slide" style="background-image: url('<%= asset_path('carousel3.png') %>'); text-align: right;">
 					<div style="margin-right: 40px; min-width: 100px;">
 						<h1>Con EasyRail</h1>
 						<p>Scopri le principali città italiane a<br>prezzi imbattibili!</p>
