@@ -4,10 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>EasyRail</title>
-	<link rel="stylesheet" href="app/assets/stylesheets/application.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<!--script src="funzioni.js"></script-->
 	<style>
 		input {
 			margin: 0;
@@ -53,7 +50,7 @@
 				<label class="carousel__control carousel__control--forward" for="1"></label>
 			</div>
 			<div class="carousel__track">
-				<li class="carousel__slide" style="text-align: center;">
+				<li class="carousel__slide" style="background-image: url('<%= asset_path('carousel1.png') %>'); text-align: center;">
 					<p>Viaggia in serenità e risparmia con EasyRail!</p>
 					<p>Solo per questa settimana, 20% di sconto sulla tariffa Economy, con codice sconto
 						<span style="background-color: white; font-weight: bold; padding: 2px 6px 2px 6px; border-radius: 6px;">LABASSI25</span>
@@ -122,26 +119,14 @@
 			</p>
 			<p>
 				<label for="dataAnd">Andata</label>
-				<input oninput="vincoliDate()" type="date" name="dataAnd" id="dataAnd" max="2024-07-31" style="width: 160px;">
+				<input oninput="vincoliDate()" type="date" name="dataAnd" id="dataAnd" max="2025-06-30" style="width: 160px;">
 				<label for="dataRit" id="lr" style="margin-left: 24px; opacity: 0.5;">Ritorno</label>
-				<input oninput="vincoliDate()" type="date" name="dataRit" id="dataRit" max="2024-07-31" disabled style="width: 160px; opacity: 0.5;">
+				<input oninput="vincoliDate()" type="date" name="dataRit" id="dataRit" max="2025-06-30" disabled style="width: 160px; opacity: 0.5;">
 			</p>
 			<label for="pass">Passeggeri (massimo: 10)</label>
-			<div class="dropdown" style="padding: 5px; border: solid 1px gray; border-radius: 5px; background-color: rgb(224, 224, 224);">
-				<button class="dropbtn" type="button" name="pass" id="pass" style="background-color: rgb(224, 224, 224);">Visualizza</button>
-				<div class="dropdown-content2" style="padding: 12px; border-radius: 10px;">
-					<table>
-						<tr>
-							<td><label for="adt">Seleziona</label></td>
-							<td>
-								<button type="button" onclick="subAdt()" class="addSubPass">-</button>
-								<input type="number" name="adt" id="adt" readonly value="0" style="width: 50px; border: hidden; background-color: rgb(224, 224, 224); text-align: center;">
-								<button type="button" onclick="addAdt()" class="addSubPass">+</button>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
+				<button type="button" onclick="subPass()" class="addSubPass">-</button>
+				<input type="number" name="pass" id="pass" readonly value="0" style="width: 40px; border: hidden; background-color: rgb(224, 224, 224); text-align: center;">
+				<button type="button" onclick="addPass()" class="addSubPass">+</button>
 			<p>
 				<label for="cs">Codice sconto (opzionale) </label>
 				<input class="cs" type="text" name="cs" id="cs" style="width: 160px;">

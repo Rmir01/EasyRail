@@ -8,6 +8,7 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ 
  * {
 	box-sizing: border-box;
 	font-family: "Outfit", sans-serif;
@@ -378,7 +379,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	background-color: rgb(16, 16, 104);
 }
 .carousel__slide:nth-of-type(1), .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(1) {
-	background-image: url("app/assets/images/carousel1.png");
 	background-size: cover;
 }
 .carousel__slide:nth-of-type(2), .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(2) {
@@ -386,7 +386,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	background-size: cover;
 }
 .carousel__slide:nth-of-type(3), .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(3) {
-	
 	background-size: cover;
 	background-position: right;
 }
