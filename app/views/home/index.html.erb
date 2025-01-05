@@ -90,8 +90,8 @@
 	</div>
 	
 	<!--Form Cerca viaggio-->	
-	<div style="text-align: center;">
-		<form action="" onsubmit="return (validaStz() && validaPass());" autocomplete="off" name="form" id="form" style="min-width: 666px; max-width: 666px; margin-bottom: 90px;">
+	<div style="">
+		<form action="" onsubmit="return (validaStz() && dataRitornoOn());" autocomplete="off" name="form" id="form" style="min-width: 666px; max-width: 666px; margin-bottom: 90px; text-align: center;">
 			<div class="formhead">Cerca viaggio</div> 
 			<p>
 				<label for="part">Da</label>
@@ -111,11 +111,9 @@
 				</datalist>
 			</p>
 			<p>
-				<table><tr>
-					<td style="padding: 0px 10px 0px 7px;">Andata e ritorno</td>
-					<td><input onclick="ritornoOnOff()" class="checkbox" type="checkbox" id="onOff" name="onOff">
-					<label for="onOff" class="toggle"></label></td>
-				</tr></table>
+					<label for="onOff">Andata e ritorno</label>
+					<input onclick="ritornoOnOff()" class="checkbox" type="checkbox" id="onOff" name="onOff">
+					<label for="onOff" class="toggle">
 			</p>
 			<p>
 				<label for="dataAnd">Andata</label>
@@ -125,7 +123,7 @@
 			</p>
 			<label for="pass">Passeggeri (massimo: 10)</label>
 				<button type="button" onclick="subPass()" class="addSubPass">-</button>
-				<input type="number" name="pass" id="pass" readonly value="0" style="width: 40px; border: hidden; background-color: rgb(224, 224, 224); text-align: center;">
+				<input type="number" name="pass" id="pass" readonly value="1" style="width: 40px; border: hidden; background-color: rgb(224, 224, 224); text-align: center;">
 				<button type="button" onclick="addPass()" class="addSubPass">+</button>
 			<p>
 				<label for="cs">Codice sconto (opzionale) </label>
