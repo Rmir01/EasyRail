@@ -8,7 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-more_treno = [
+more_trains = [
 	#Treni sud->nord
 	{
 	:id => 1000,
@@ -711,11 +711,11 @@ more_treno = [
 	:hf5 => '23:'
 	}
 ]
-more_treno.each do |treno|
-	Treno.create(treno)
+more_trains.each do |train|
+	Train.create(train)
 end
 
-more_tratta = [
+more_travels = [
 
 	{
 	:cod => 1000,
@@ -4572,6 +4572,6 @@ more_tratta = [
 
 ]
 
-more_tratta.each do |tratta|
-	Tratta.create(tratta)
+more_travels.each do |travel|
+	Travel.create(travel)
 end

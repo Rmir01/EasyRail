@@ -4,23 +4,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Accedi</title>
-	<link href="stile.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 	<!-- Barra superiore-->
 	<header class="topnav">
-		<nav>	
-			<a class="titolo" href="HomePage.hphp" ALT="EasyRail">EasyRail</a>
+		<nav>
+			<%= link_to "EasyRail", root_path, class: "titolo" %>
 			<div class="log dropdown">
 				<button class="dropbtn">Accedi</button>
 				<div class="dropdown-content">
 					<%= link_to "Login", login_path, class: "center" %>
-					<a href="Register.html">Registrati</a>
+					<%#= link_to "Registrati", register_path, class: "center" %>
 				</div>
 			</div>
-			<a class="center" href="HomePage.php">Home</a>
-            <a class="center" style="margin-right:1%;" href="TrainStato.php">Stato treno</a>
+			<%= link_to "Home", root_path, class: "active center" %>
+			<a class="center" href="TrainStatus.html">Stato treno</a>
 		</nav>
 	</header>
 	<main>

@@ -17,15 +17,15 @@
 		<!--Barra superiore-->
 		<header class="topnav">
 			<nav>
-				<a class="titolo" href="HomePage.html">EasyRail</a>
+				<%= link_to "EasyRail", root_path, class: "titolo" %>
 				<div class="log dropdown">
 					<button class="dropbtn">Accedi</button>
 					<div class="dropdown-content">
 						<%= link_to "Login", login_path, class: "center" %>
-						<a href="Register.html">Registrati</a>
+						<%#= link_to "Registrati", register_path, class: "center" %>
 					</div>
 				</div>
-				<a class="active center" href="HomePage.html">Home</a>
+				<%= link_to "Home", root_path, class: "active center" %>
 				<a class="center" href="TrainStatus.html">Stato treno</a>
 			</nav>
 		</header>
@@ -91,7 +91,7 @@
 	
 	<!--Form Cerca viaggio-->	
 	<div style="">
-		<form action="" onsubmit="return (validaStz() && dataRitornoOn());" autocomplete="off" name="form" id="form" style="min-width: 666px; max-width: 666px; margin-bottom: 90px; text-align: center;">
+		<form action="" onsubmit="return (validaStz() && validaDate());" autocomplete="off" name="form" id="form" style="min-width: 666px; max-width: 666px; margin-bottom: 90px; text-align: center;">
 			<div class="formhead">Cerca viaggio</div> 
 			<p>
 				<label for="part">Da</label>

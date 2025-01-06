@@ -77,10 +77,15 @@ window.vincoliDate = function () {
     }
 };
 
-window.dataRitornoOn = function () {
+window.validaDate = function () {
+    var dataAnd = document.getElementById("dataAnd");
+    if (dataAnd.value == "") {
+        alert("Inserire una data per il viaggio di andata");
+		return false;
+    }
     var dataRit = document.getElementById("dataRit");
     if (document.getElementById("onOff").checked && dataRit.value == "") {
-        alert("Hai selezionato andata e ritorno, inserisci una data valida per il ritorno");
+        alert("Andata&Ritorno selezionato, inserire una data valida per il ritorno");
 		return false;
 	} else 
 		return true;
