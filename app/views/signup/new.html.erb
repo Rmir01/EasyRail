@@ -3,51 +3,59 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Accedi</title>
 	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-	<!-- Barra superiore-->
 	<header class="topnav">
 		<nav>
-			<%= link_to "EasyRail", root_path, class: "titolo" %>
-			<div class="log dropdown">
-				<button class="dropbtn">Accedi</button>
-				<div class="dropdown-content">
-					<%= link_to "Login", login_path, class: "center" %>
-					<%= link_to "Registrati", signup_path, class: "center" %>
-				</div>
+		<%= link_to "EasyRail", root_path, class: "titolo" %>
+		<div class="log dropdown">
+			<button class="dropbtn">Accedi</button>
+			<div class="dropdown-content">
+				<%= link_to "Login", login_path, class: "center" %>
+				<%= link_to "Registrati", signup_path, class: "center" %>
 			</div>
-			<%= link_to "Home", root_path, class: "active center" %>
-			<a class="center" href="TrainStatus.html">Stato treno</a>
+		</div>
+		<%= link_to "Home", root_path, class: "active center" %>
+		<a class="center" href="TrainStatus.html">Stato treno</a>
 		</nav>
 	</header>
 	<main>
-			<!-- Form con inserimento credenziali-->
-		<form action="login.php" method="post" style="margin-top: 60px auto 60px auto;min-width: 30%;">
-			<div class="formhead">Accedi con le tue credenziali</div>
-			<table style="margin-left: auto;margin-right: auto;">
+		<form action="" style="margin-top: 60px auto 60px auto;">
+			<div class="formhead">Registrazione</div>
+			<table>
+				<tr>
+					<p>
+					<td><label for="nome">Nome </label></td>
+					<td><input type="text" name="nome" id="nome"></td>
+					</p>
+				</tr>
+				<tr>
+					<p>
+					<td><label for="cognome">Cognome </label></td>
+					<td><input type="text" name="cognome" id="cohnome"></td>
+					</p>
+				</tr>
 				<tr>
 					<p>
 					<td><label for="email">Email </label></td>
-					<td><input type="email" name="InputEmail" id="email" required></td>
+					<td><input type="email" name="email" id="email"></td>
 					</p>
 				</tr>
 				<tr>
 					<p>
 					<td><label for="pw">Password </label></td>
-					<td><input type="password" name="InputPassword" id="pw" required></td>
+					<td><input type="password" name="pw" id="pw"></td>
 					</p>
 				</tr>
 			</table>
 			<p>
 				<div style="text-align: center;">
-				<input class="button" type="submit" value="Accedi" id="cerca">
+				<input class="button" type="submit" value="Registrati" id="register">
 				</div>
 			<p>
 		</form>
 	</main>
-	<!--Parte inferiore-->
 	<footer class="bottom">
 		<table>
 			<tr>

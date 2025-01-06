@@ -38,16 +38,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_06_122320) do
     t.check_constraint "pp = pe + 10", name: "p_e_price_check"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
+  create_table "users", primary_key: "email", id: :string, default: "", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "surname", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "travels", "trains", column: "cod"
