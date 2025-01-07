@@ -4579,7 +4579,7 @@ the_admin = [{
 	:name => "Ad",
 	:surname => "Min",
 	:email => "ad@min.it",
-	:encrypted_password => "admin"
+	:encrypted_password => "administrator"
 }]
 
 User.create(the_admin[0])

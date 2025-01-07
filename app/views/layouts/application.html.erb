@@ -1,7 +1,34 @@
 <!DOCTYPE html>
 <html>
+
+<link rel="icon" href="<%= asset_path('LogoEasyRail.jpg') %>" type="image/jpeg">
+<link rel="apple-touch-icon" href="<%= asset_path('LogoEasyRail.jpg') %>" type="image/jpeg">
+
   <head>
-    <title><%= content_for(:title) || "EasyRail" %></title>
+		<!--Barra superiore-->
+    <header class="topnav">
+			<nav>
+				<%= link_to "EasyRail", root_path, class: "titolo" %>
+				<div class="log dropdown">
+        <% if user_signed_in? %>
+					<button class="dropbtn"><%= current_user.name %></button>
+          <div class="dropdown-content">
+            <%= link_to "Area personale", root_path, class: "center" %>
+            <%= link_to 'Logout', destroy_user_session_path, class: "center", method: :delete, data: { turbo: false } %>
+          </div>
+
+        <% else %>
+					<button class="dropbtn">Accedi</button>
+					<div class="dropdown-content">
+						<%= link_to "Login", new_user_session_path, class: "center" %>
+						<span><%= link_to "Registrati", new_user_registration_path, class: "center" %></span>
+					</div>
+        <% end %>
+        </div>
+				<%= link_to "Home", root_path, class: (current_page?("/home") ? "active center" : "center") %>
+				<a class="center" href="TrainStatus.html">Stato treno</a>
+			</nav>
+		</header>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -13,9 +40,6 @@
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <link rel="icon" href="<%= asset_path('LogoEasyRail.jpg') %>" type="image/jpeg">
-    <link rel="apple-touch-icon" href="<%= asset_path('LogoEasyRail.jpg') %>" type="image/jpeg">
-
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -24,4 +48,20 @@
   <body>
     <%= yield %>
   </body>
+  
+  <!--Parte inferiore-->
+	<footer class="bottom">
+		<table>
+			<tr>
+				<td>
+					<p>EasyRail &copy;</p>
+					<p>Un progetto per Lab. ASSI (Laboratorio di Architetture Software e Sicurezza Informatica) - A.A. 2024/25</p>
+					<p>Proff. Leonardo Querzoni e Daniele Cono D'Elia</p>
+				</td>
+			<tr>	
+				<td>Capitale Sociale 0&euro;.<p>Tutti i diritti riservati.</p></td>
+				<td colspan="">Sede legale Università La Sapienza -	Edificio Marco Polo, Viale Scalo San Lorenzo, 82, Roma</td>
+			</tr>
+		</table>
+	</footer>
 </html>

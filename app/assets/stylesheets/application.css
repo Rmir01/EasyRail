@@ -159,6 +159,7 @@ footer {
 }
 /*Dropdown su Accedi e Dropdown2 su Visualizza passeggeri*/
 .dropdown {
+	min-width: 140px;
 	position: relative;
 	display: inline-block;
 	border-bottom-right-radius: 10px;
