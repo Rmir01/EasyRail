@@ -1,6 +1,5 @@
 import "jquery";
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails";
 import "controllers";
 
 //Data minima impostabile
@@ -100,3 +99,5 @@ window.addPass = function () {
     var pass = document.getElementById("pass");
     if (parseInt(pass.value) < 10) pass.value++;
 };
+import "@hotwired/turbo-rails"
+import "controllers"

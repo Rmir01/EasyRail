@@ -3,6 +3,20 @@
 
 <link rel="icon" href="<%= asset_path('LogoEasyRail.jpg') %>" type="image/jpeg">
 <link rel="apple-touch-icon" href="<%= asset_path('LogoEasyRail.jpg') %>" type="image/jpeg">
+<style>
+  .logged {
+    font-size: 16px;
+    min-width: 100%;
+    padding: 20px 20px 20px 20px;
+    margin: -100px 0 -100px 0;
+    border: none;
+    color: black;
+    width: 100%;
+    text-decoration: none;
+    min-width: 100%;
+    z-index: 1;
+  }
+</style>
 
   <head>
 		<!--Barra superiore-->
@@ -13,8 +27,8 @@
         <% if user_signed_in? %>
 					<button class="dropbtn"><%= current_user.name %></button>
           <div class="dropdown-content">
-            <%= link_to "Area personale", root_path, class: "center" %>
-            <%= link_to 'Logout', destroy_user_session_path, class: "center", method: :delete, data: { turbo: false } %>
+            <%= button_to "Area personale", root_path, class: "logged", style: "" %>
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "logged" %>
           </div>
 
         <% else %>
