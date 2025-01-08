@@ -27,15 +27,15 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(minimo <%= @minimum_password_length %> caratteri)</em>
+    <em>(min. <%= @minimum_password_length %> caratteri)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Registrati" %>
+    <%= f.submit "Registrati", class: "btn-hover"   %>
   </div>
-  <div class="button" style="width: 100%">
-  <%= link_to "Già registrato? Effettua il login", new_user_session_path, class: "center" %>
+  <div class="button" style="width: 95%; text-align: center;">
+  <%= link_to "Già registrato?<br>Effettua il login".html_safe, new_user_session_path, class: "center" %>
   </div>
 <% end %>
