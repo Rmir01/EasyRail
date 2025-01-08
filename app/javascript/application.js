@@ -1,8 +1,8 @@
-import "jquery";
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "controllers";
+import "jquery";
 
 //Data minima impostabile
+
 $(function() {
 	var today = new Date();
 	var day = today.getDate();
@@ -99,5 +99,3 @@ window.addPass = function () {
     var pass = document.getElementById("pass");
     if (parseInt(pass.value) < 10) pass.value++;
 };
-import "@hotwired/turbo-rails"
-import "controllers"

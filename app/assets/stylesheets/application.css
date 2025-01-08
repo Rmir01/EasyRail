@@ -159,7 +159,6 @@ footer {
 }
 /*Dropdown su Accedi e Dropdown2 su Visualizza passeggeri*/
 .dropdown {
-	min-width: 140px;
 	position: relative;
 	display: inline-block;
 	border-bottom-right-radius: 10px;
@@ -168,6 +167,7 @@ footer {
 	background-color: white;
 	display: inline-block;
 	height: 0px;
+	min-width: 90px;
 	color: black;
 	font-size: 16px;
 	border: none;
@@ -184,7 +184,7 @@ footer {
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
 	z-index: 1;
 }
-.dropdown-content a {
+.dropdown-content a{
 	color: black;
 	padding: 10px 0px 14px 0px;
 	text-decoration: none;
@@ -196,21 +196,7 @@ footer {
 .dropdown:hover .dropdown-content {
 	display: block;
 }
-.dropdown-content2 {
-	display: none;
-	position: absolute;
-	left: 0;
-	background-color: #f9f9f9;
-	min-width: 100%;
-	border-bottom-left-radius: 3px;
-	border-bottom-right-radius: 3px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
-	z-index: 1;
-}
-.dropdown:hover .dropdown-content2 {
-	width: 300px;
-	display: inline;
-}
+
 /* Non far apparire freccette su/giù per input type="number" (per Chrome, Safari, Edge, Opera) */
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-appearance: none;

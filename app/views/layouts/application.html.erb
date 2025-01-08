@@ -5,16 +5,21 @@
 <link rel="apple-touch-icon" href="<%= asset_path('LogoEasyRail.jpg') %>" type="image/jpeg">
 <style>
   .logged {
-    font-size: 16px;
-    min-width: 100%;
-    padding: 20px 20px 20px 20px;
-    margin: -100px 0 -100px 0;
-    border: none;
-    color: black;
-    width: 100%;
-    text-decoration: none;
-    min-width: 100%;
-    z-index: 1;
+    color: white;
+    background-color: rgb(180, 0, 0);
+    position: absolute;
+    left: 10%; top: 90px;
+    width: 80%;
+    padding: 20px;
+  }
+  .logged:hover {
+    cursor: pointer;
+    box-shadow: 3px 4px rgba(0,0,0,0.3);
+    transition-duration: 0.25s;
+  }
+  .logged:active{
+    transform: translateY(2px);
+    box-shadow: 1px 1px rgba(0,0,0,0.3);
   }
 </style>
 
@@ -27,8 +32,10 @@
         <% if user_signed_in? %>
 					<button class="dropbtn"><%= current_user.name %></button>
           <div class="dropdown-content">
-            <%= button_to "Area personale", root_path, class: "logged", style: "" %>
-            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "logged" %>
+            <%= link_to "Area personale", root_path, class: "center" %>
+            <%= form_with url: destroy_user_session_path, method: :delete do %>
+              <%= submit_tag "Logout", class: "logged" %>
+            <% end %>
           </div>
 
         <% else %>
