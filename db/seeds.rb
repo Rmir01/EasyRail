@@ -4575,13 +4575,4 @@ more_travels = [
 more_travels.each do |travel|
 	Travel.create(travel)
 
-the_admin = [{
-	:name => "Ad",
-	:surname => "Min",
-	:email => "ad@min.it",
-	:encrypted_password => "administrator"
-}]
-
-User.create(the_admin[0])
-
 end

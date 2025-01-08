@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  
+  #homepage = root
   resources :home
   root :to => redirect('/home')
+
+  #registrazione, login, logout
   devise_for :users
+
+  #area personale
+  get '/profile', to: 'users#profile', as: 'user_profile'
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

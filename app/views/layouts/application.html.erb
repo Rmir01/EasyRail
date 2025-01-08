@@ -32,7 +32,7 @@
         <% if user_signed_in? %>
 					<button class="dropbtn"><%= current_user.name %></button>
           <div class="dropdown-content">
-            <%= link_to "Area personale", root_path, class: "center" %>
+            <%= link_to "Area personale", user_profile_path , class: "center" %>
             <%= form_with url: destroy_user_session_path, method: :delete do %>
               <%= submit_tag "Logout", class: "logged" %>
             <% end %>
