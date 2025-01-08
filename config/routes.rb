@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   #area personale
   get '/profile', to: 'users#profile', as: 'user_profile'
+  get '/profile/edit', to: 'users#edit', as: 'edit_user_profile'
+  patch '/profile', to: 'users#update'
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

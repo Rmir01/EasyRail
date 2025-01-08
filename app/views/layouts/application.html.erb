@@ -3,25 +3,6 @@
 
 <link rel="icon" href="<%= asset_path('LogoEasyRail.jpg') %>" type="image/jpeg">
 <link rel="apple-touch-icon" href="<%= asset_path('LogoEasyRail.jpg') %>" type="image/jpeg">
-<style>
-  .logged {
-    color: white;
-    background-color: rgb(180, 0, 0);
-    position: absolute;
-    left: 10%; top: 90px;
-    width: 80%;
-    padding: 20px;
-  }
-  .logged:hover {
-    cursor: pointer;
-    box-shadow: 3px 4px rgba(0,0,0,0.3);
-    transition-duration: 0.25s;
-  }
-  .logged:active{
-    transform: translateY(2px);
-    box-shadow: 1px 1px rgba(0,0,0,0.3);
-  }
-</style>
 
   <head>
 		<!--Barra superiore-->
@@ -42,7 +23,7 @@
 					<button class="dropbtn">Accedi</button>
 					<div class="dropdown-content">
 						<%= link_to "Login", new_user_session_path, class: "center" %>
-						<span><%= link_to "Registrati", new_user_registration_path, class: "center" %></span>
+						<%= link_to "Registrati", new_user_registration_path, class: "center" %>
 					</div>
         <% end %>
         </div>

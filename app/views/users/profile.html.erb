@@ -1,0 +1,43 @@
+<title>Area Personale</title>
+<style>
+	.info {
+		width: 25%;
+		min-width: 240px;
+		padding-right: 2.5%;
+	}
+	.dati {
+		margin: 0 5% 0 5%;
+	}
+	.viaggi {
+		width: auto;
+		min-width: auto;
+		padding-left: 2.5%;
+	}
+	.logout {
+		margin: auto auto 30px auto;
+	}
+</style>
+<table class="dati">
+	<tr>
+	<td class="info">
+		<%= form_with url: destroy_user_session_path, method: :delete do %>
+		<div class="formhead">I tuoi dati</div>
+		<p>Nome: <%= @user.name %></p>
+		<p>Cognome: <%= @user.surname %></p>
+		<p>Email: <%= @user.email %></p>
+		<p>Password: *****</p>
+		<p style="text-align: center; margin-top: 30px;">
+		<%= link_to "Modifica dati", edit_user_profile_path, class: "button" %>
+		</p>
+		<% end %>
+	</td>
+
+	<td class="viaggi">
+		<form action "">
+			<div class="formhead">I tuoi viaggi</div>
+			<p style="text-align: center;">Al momento non hai biglietti acquistati.</p>
+		</form>
+	</td>
+	</tr>
+</table>
+<%= submit_tag "Logout", class: "button logout", style: "background-color: rgb(180, 0, 0); width: 80px;" %>

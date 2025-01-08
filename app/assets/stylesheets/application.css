@@ -56,7 +56,7 @@ a.center:hover:not(.active), a.log:hover:not(.active) {
 }
 /*Form per inserimento dati*/
 form {
-	margin: 0 auto;
+	margin: auto;
 	margin-top: 50px;
 	margin-bottom: 40px;
 	text-align: left;
@@ -195,6 +195,23 @@ footer {
 }
 .dropdown:hover .dropdown-content {
 	display: block;
+}
+.logged {
+    color: white;
+    background-color: rgb(180, 0, 0);
+    position: absolute;
+    left: 10%; top: 90px;
+    width: 80%;
+    padding: 20px;
+}
+.logged:hover {
+    cursor: pointer;
+    box-shadow: 3px 4px rgba(0,0,0,0.3);
+    transition-duration: 0.25s;
+}
+.logged:active{
+    transform: translateY(2px);
+    box-shadow: 1px 1px rgba(0,0,0,0.3);
 }
 
 /* Non far apparire freccette su/giù per input type="number" (per Chrome, Safari, Edge, Opera) */
@@ -399,5 +416,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 /* Stile hover */
 .btn-hover:hover {
 	background-color:  rgb(16, 16, 104); 
-	color: white; 
+	color: white;
+    transition-duration: 0.25s;
   }
