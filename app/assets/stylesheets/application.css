@@ -395,3 +395,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	padding: 5px 8px 5px 8px;
 	margin-left: 8px;
 }
+/*Tasto login*/
+/* Stile hover */
+.btn-hover:hover {
+	background-color:  rgb(16, 16, 104); 
+	color: white; 
+  }
