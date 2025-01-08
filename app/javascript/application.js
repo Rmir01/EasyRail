@@ -99,3 +99,19 @@ window.addPass = function () {
     var pass = document.getElementById("pass");
     if (parseInt(pass.value) < 10) pass.value++;
 };
+
+window.verificaLogin = function () {
+    const searchButton = document.getElementById("cerca");
+    const logged = document.body.dataset.userLoggedIn === "true";
+  
+    searchButton.addEventListener("click", function (e) {
+        if (!logged) {
+            e.preventDefault();
+            alert("Per effettuare una ricerca, effettua il login!");
+            window.location.href = "/users/sign_in"; // Redirige alla pagina di login
+        }
+    });
+};
+document.addEventListener("DOMContentLoaded", function () {
+    window.verificaLogin();
+});

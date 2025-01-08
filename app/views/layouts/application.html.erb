@@ -47,7 +47,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body data-user-logged-in="<%= user_signed_in? %>">
     <%= yield %>
   </body>
   

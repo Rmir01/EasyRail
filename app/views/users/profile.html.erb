@@ -9,9 +9,15 @@
 		margin: 0 5% 0 5%;
 	}
 	.viaggi {
+		margin: auto;
 		width: auto;
 		min-width: auto;
 		padding-left: 2.5%;
+	}
+	.admin {
+		text-align: center;
+		margin: auto auto 25px auto;
+		width: 200px;
 	}
 	.logout {
 		margin: auto auto 30px auto;
@@ -22,22 +28,31 @@
 	<td class="info">
 		<%= form_with url: destroy_user_session_path, method: :delete do %>
 		<div class="formhead">I tuoi dati</div>
-		<p>Nome: <%= @user.name %></p>
-		<p>Cognome: <%= @user.surname %></p>
-		<p>Email: <%= @user.email %></p>
-		<p>Password: *****</p>
+		<div <% if @user.email == "ad@min.it" %> style="text-align: center;" <% end %>>
+			<p>Nome: <%= @user.name %></p>
+			<p>Cognome: <%= @user.surname %></p>
+			<p>Email: <%= @user.email %></p>
+			<p>Password: *****</p>
+		</div>
 		<p style="text-align: center; margin-top: 30px;">
 		<%= link_to "Modifica dati", edit_user_profile_path, class: "button" %>
 		</p>
 		<% end %>
 	</td>
 
-	<td class="viaggi">
-		<form action "">
-			<div class="formhead">I tuoi viaggi</div>
-			<p style="text-align: center;">Al momento non hai biglietti acquistati.</p>
-		</form>
-	</td>
+	<% if @user.email != "ad@min.it" %>
+		<td class="viaggi">
+			<form action "">
+				<div class="formhead">I tuoi viaggi</div>
+				<p style="text-align: center;">Al momento non hai biglietti acquistati.</p>
+			</form>
+		</td>
+	<% end %>
 	</tr>
 </table>
+
+<% if @user.email == "ad@min.it" %>
+	<%= link_to "AREA FUNZIONALITÁ AMMINISTRATORE", root_path, class: "button admin" %>
+<% end %>
+
 <%= submit_tag "Logout", class: "button logout", style: "background-color: rgb(180, 0, 0); width: 80px;" %>
