@@ -1,0 +1,20 @@
+<title>Stato treno</title>
+<style>
+	form {
+		width: 40%;
+	}
+</style>
+
+<%= form_with url: train_status_show_path, method: :get do %>
+	<p class="formhead">Visualizza informazioni</p>
+	<div style="text-align: center;">
+		<%= label_tag :code, "Codice treno" %>
+		<%= number_field_tag :code, nil, placeholder: " codice identificativo", required: true, id: "ct" %>
+	</div>
+
+	<% if flash.now[:alert] %>
+		<p style="color: red; text-align: center;"><%= flash.now[:alert] %></p>
+	<% end %>
+
+	<p style="text-align: center;"><%= submit_tag "Cerca", class: "button" %></p>
+<% end %>

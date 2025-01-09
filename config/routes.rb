@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :home
   root :to => redirect('/home')
 
+  #ricerche recenti
+  resources :searches, only: [:create]
+
   #registrazione, login, logout
   devise_for :users
 
@@ -13,9 +16,10 @@ Rails.application.routes.draw do
   get '/profile/edit', to: 'users#edit', as: 'edit_user_profile'
   patch '/profile', to: 'users#update'
 
-  #ricerche recenti
-  resources :searches, only: [:create]
-
+  #stato treno
+  get 'train_status', to: 'train_status#index', as: 'train_status'
+  get 'train_status/show', to: 'train_status#show', as: 'train_status_show'
+  
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check

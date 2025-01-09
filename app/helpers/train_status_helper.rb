@@ -1,0 +1,2 @@
+module TrainStatusHelper
+end

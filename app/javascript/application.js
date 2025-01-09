@@ -1,8 +1,8 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "jquery";
 
-//Data minima impostabile
-
+//HOMEPAGE
+//data minima impostabile
 $(function() {
 	var today = new Date();
 	var day = today.getDate();
@@ -18,6 +18,7 @@ $(function() {
 	$("#dataAnd").attr("value", minDate);
 });
 
+//acambio campi form
 window.swap = function () {
     var stzPart = document.getElementById("part");
     var stzArr = document.getElementById("arr");
@@ -45,6 +46,7 @@ window.validaStz = function () {
     return true;
 };
 
+//accesso al campo data ritorno
 window.ritornoOnOff = function () {
     var rit = document.getElementById("dataRit");
     if (document.getElementById("onOff").checked) {
@@ -90,16 +92,19 @@ window.validaDate = function () {
 		return true;
 };
 
+//decrementa quantità passeggeri con tasto -
 window.subPass = function () {
     var pass = document.getElementById("pass");
     if (parseInt(pass.value) > 1) pass.value--;
 };
 
+//incrementa quantità passeggeri con tasto +
 window.addPass = function () {
     var pass = document.getElementById("pass");
     if (parseInt(pass.value) < 10) pass.value++;
 };
 
+//controllo utente loggato per effettuare la ricerca
 window.verificaLogin = function () {
     const searchButton = document.getElementById("cerca");
     const logged = document.body.dataset.userLoggedIn === "true";
@@ -116,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.verificaLogin();
 });
 
+//salvataggio ricerche recenti nella tabella ricerche
 window.salvaRicerca = function () {
     const part = document.getElementById("part").value;
     const arr = document.getElementById("arr").value;
@@ -131,4 +137,3 @@ window.salvaRicerca = function () {
     }).catch((error) => console.error("Errore durante il salvataggio della ricerca:", error));
     }
 };
-  
