@@ -10,20 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_06_122320) do
-  create_table "tratta", primary_key: ["cod", "part", "dest"], force: :cascade do |t|
-    t.integer "cod"
-    t.string "part"
-    t.string "dest"
-    t.string "hpar"
-    t.string "harr"
-    t.integer "pe"
-    t.integer "pp"
-    t.check_constraint "pe > 0", name: "minimum_price_check"
-    t.check_constraint "pp = pe + 10", name: "price_check"
+ActiveRecord::Schema[8.0].define(version: 2025_01_09_100526) do
+  create_table "searches", force: :cascade do |t|
+    t.string "departure_station"
+    t.string "arrival_station"
+    t.string "email"
+    t.datetime "created_at"
   end
 
-  create_table "trenos", force: :cascade do |t|
+  create_table "trains", force: :cascade do |t|
     t.string "f0"
     t.string "f1"
     t.string "f2"
@@ -38,17 +33,24 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_06_122320) do
     t.string "hf5"
   end
 
+  create_table "travels", primary_key: ["cod", "part", "dest"], force: :cascade do |t|
+    t.integer "cod"
+    t.string "part"
+    t.string "dest"
+    t.string "hpar"
+    t.string "harr"
+    t.integer "pe"
+    t.integer "pp"
+    t.check_constraint "pe > 0", name: "min_price_check"
+    t.check_constraint "pp = pe + 10", name: "p_e_price_check"
+  end
+
   create_table "users", primary_key: "email", id: :string, default: "", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "surname", default: "", null: false
     t.string "encrypted_password", default: "", null: false
   end
 
-  create_table "utente", primary_key: "email", id: :string, force: :cascade do |t|
-    t.string "password"
-    t.string "nome"
-    t.string "cognome"
-  end
-
-  add_foreign_key "tratta", "trenos", column: "cod"
+  add_foreign_key "searches", "users", column: "email", primary_key: "email"
+  add_foreign_key "travels", "trains", column: "cod"
 end

@@ -115,3 +115,20 @@ window.verificaLogin = function () {
 document.addEventListener("DOMContentLoaded", function () {
     window.verificaLogin();
 });
+
+window.salvaRicerca = function () {
+    const part = document.getElementById("part").value;
+    const arr = document.getElementById("arr").value;
+
+    if (part && arr) {
+    fetch("/searches", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        "X-CSRF-Token": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+        },
+        body: JSON.stringify({ part: part, arr: arr }),
+    }).catch((error) => console.error("Errore durante il salvataggio della ricerca:", error));
+    }
+};
+  

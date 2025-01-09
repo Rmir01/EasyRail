@@ -11,6 +11,12 @@
 			width: 240px;
 		}
 	</style>
+	<script>
+  		function popolaForm(part, arr) {
+			document.getElementById("part").value = part;
+			document.getElementById("arr").value = arr;
+		}
+	</script>
 </head>
 <body>
 	<main style="background: url('<%= asset_path('back3.jpg') %>'); no-repeat; background-size: cover; background-position: center;">
@@ -75,7 +81,7 @@
 	
 	<!--Form Cerca viaggio-->	
 	<div style="">
-		<form action="" onsubmit="return (validaStz() && validaDate());" autocomplete="off" name="form" id="form" style="min-width: 666px; max-width: 666px; margin-bottom: 90px; text-align: center;">
+	<form action="" method="get" onsubmit="salvaRicerca(); return (validaStz() && validaDate());" autocomplete="off" name="form" id="form" style="min-width: 666px; max-width: 666px; margin-bottom: 90px; text-align: center;">
 			<div class="formhead">Cerca viaggio</div> 
 			<p>
 				<label for="part">Da</label>
@@ -93,6 +99,30 @@
 					<option value="Torino Porta Nuova"></option>
 					<option value="Venezia Santa Lucia"></option>
 				</datalist>
+			</p>
+			<p>
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="recentSearchesDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="color: black; background-color: lightgray;">
+					Ultime ricerche
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="recentSearchesDropdown">
+					<% if user_signed_in? %>
+						<% if @recent_searches.any? %>
+						<% @recent_searches.each do |search| %>
+							<li>
+							<a class="dropdown-item" href="javascript:void(0);" onclick="popolaForm('<%= search.departure_station %>', '<%= search.arrival_station %>')">
+								<%= search.departure_station %> &rarr; <%= search.arrival_station %>
+							</a>
+							</li>
+						<% end %>
+						<% else %>
+						<li><span class="dropdown-item">Non hai ancora effettuato una ricerca</span></li>
+						<% end %>
+					<% else %>
+						<li><span class="dropdown-item">Effettua il login per vedere le tue ultime ricerche</span></li>
+					<% end %>
+					</ul>
+				</div>
 			</p>
 			<p>
 					<label for="onOff">Andata e ritorno</label>
