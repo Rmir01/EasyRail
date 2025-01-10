@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "travels/search", to: "travels#search", as: "travels_search"
 
   # registrazione, login, logout
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   # area personale
   get "/profile", to: "users#profile", as: "user_profile"
