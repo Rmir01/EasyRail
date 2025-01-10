@@ -47,79 +47,70 @@
 
 		<!-- Subheader -->
 		<div style="border-bottom: solid 1px black; padding-bottom: 10px;">
-		Da 
-		<span style="font-weight: 600;"><%= @train.f0 %></span> 
-		a 
-		<span style="font-weight: 600;"><%= @train.f5 %></span><br>
+			Da 
+			<span style="font-weight: 600;"><%= @train.f0 %></span> 
+			a 
+			<span style="font-weight: 600;"><%= @train.f5 %></span><br>
 		</div>
 
 		<p style="margin-top: 20px;">Stato treno:
-		<% ora = Time.now.in_time_zone("Rome").strftime("%H:%M:%S") %>
-		<% if ora < @train.hf0 %>
-		<span class="box-stato">NON PARTITO</span>
-		<% elsif ora >= @train.hf5 %>
-		<span class="box-stato">FINE CORSA</span>
-		<% else %>
-		<span class="box-stato">IN VIAGGIO</span>
-		<% end %>
+			<% ora = Time.now.in_time_zone("Rome").strftime("%H:%M:%S") %>
+			<% if ora < @train.hf0 %>
+				<span class="box-stato">NON PARTITO</span>
+			<% elsif ora >= @train.hf5 %>
+				<span class="box-stato">FINE CORSA</span>
+			<% else %>
+				<span class="box-stato">IN VIAGGIO</span>
+			<% end %>
 		</p>
 
 		<p>
-		<table style="width: 100%; text-align: left;">
-			<tr>
-			<th>Fermata</th>
-			<% (0..5).each do |i| %>
-				<% if @train.send("f#{i}").present? %>
-				<td style="text-align: center;"><%= @train.send("f#{i}") %></td>
-				<% end %>
-			<% end %>
-			</tr>
-
-			<!-- Spazi vuoti -->
-			<tr><td></td></tr>
-			<tr><td></td></tr>
-			<tr><td></td></tr>
-
-			<tr>
-			<th>Orario partenza</th>
-			<% (0..5).each do |i| %>
-				<% hf = @train["hf#{i}"] %>
-				<% if hf.present? %>
-				<td style="text-align: right;"><%= Time.parse(hf+"00").strftime("%H:%M") %></td>
-				<% end %>
-			<% end %>
-			</tr>
-
-			<!-- Spazi vuoti -->
-			<% 10.times { %>
-			<tr><td></td></tr>
-			<% } %>
-
-			<tr>
-			<th>Avanzamento</th>
-			<% lampeggiante = true %>
-			<% (0..5).each do |c| %>
-				<% orafermata = @train.send("hf#{c}") %>
-				<% orafermataprec = (0...c).reverse_each.find { |n| @train["hf#{n}"].present? }.then { |n| @train["hf#{n}"] } %>
-
-				<% if orafermata.present? %>
-					<% if lampeggiante && ora < orafermata && orafermataprec && ora >= orafermataprec %>
-						<td class="horizontal-bar blinking" style="background-color: rgb(16, 16, 104); text-align: left;<%= c == 5 ? ' border-top-right-radius: 20px; border-bottom-right-radius: 20px;' : '' %>">
-						<%= image_tag "minitreno.png" %>
-						</td>
-						<% lampeggiante = false %>
-					<% elsif ora < orafermata %>
-						<td class="horizontal-bar" style="background-color: rgb(200, 200, 200);<%= c == 0 ? ' border-top-left-radius: 20px; border-bottom-left-radius: 20px;' : '' %><%= c == 5 ? ' border-top-right-radius: 20px; border-bottom-right-radius: 20px;' : '' %>">
-						</td>
-					<% elsif ora >= orafermata %>
-						<td class="horizontal-bar" style="background-color: rgb(16, 16, 104);<%= c == 0 ? ' border-top-left-radius: 20px; border-bottom-left-radius: 20px;' : '' %><%= c == 5 ? ' border-top-right-radius: 20px; border-bottom-right-radius: 20px;' : '' %>">
-						<%= c == 0 ? 'Partito ✔' : (c == 5 ? 'Arrivato ✔' : '✔') %>
-						</td>
+			<table style="width: 100%; text-align: left;">
+				<tr>
+				<th>Fermata</th>
+				<% (0..5).each do |i| %>
+					<% if @train.send("f#{i}").present? %>
+					<td style="text-align: center;"><%= @train.send("f#{i}") %></td>
 					<% end %>
 				<% end %>
-			<% end %>
-			</tr>
-		</table>
+				</tr>
+				
+				<tr>
+				<th>Orario partenza</th>
+				<% (0..5).each do |i| %>
+					<% hf = @train["hf#{i}"] %>
+					<% if hf.present? %>
+						<td style="text-align: right;"><%= Time.parse(hf).strftime("%H:%M") %></td>
+					<% end %>
+				<% end %>
+				</tr>
+				<!--Distanziamento righe-->
+				<tr><td><p></p></td></tr>
+				<tr>
+					<th>Avanzamento</th>
+					<% lampeggiante = true %>
+					<% (0..5).each do |c| %>
+						<% orafermata = @train.send("hf#{c}") %>
+						<% orafermataprec = (0...c).reverse_each.find { |n| @train["hf#{n}"].present? }.then { |n| @train["hf#{n}"] } %>
+
+						<% if orafermata.present? %>
+							<% if lampeggiante && ora < orafermata && orafermataprec && ora >= orafermataprec %>
+								<td class="horizontal-bar blinking" style="background-color: rgb(16, 16, 104); text-align: left;<%= c == 5 ? ' border-top-right-radius: 20px; border-bottom-right-radius: 20px;' : '' %>">
+									<%= image_tag "minitreno.png" %>
+								</td>
+								<% lampeggiante = false %>
+							<% elsif ora < orafermata %>
+								<td class="horizontal-bar" style="background-color: rgb(200, 200, 200);<%= c == 0 ? ' border-top-left-radius: 20px; border-bottom-left-radius: 20px;' : '' %><%= c == 5 ? ' border-top-right-radius: 20px; border-bottom-right-radius: 20px;' : '' %>">
+								</td>
+							<% elsif ora >= orafermata %>
+								<td class="horizontal-bar" style="background-color: rgb(16, 16, 104);<%= c == 0 ? ' border-top-left-radius: 20px; border-bottom-left-radius: 20px;' : '' %><%= c == 5 ? ' border-top-right-radius: 20px; border-bottom-right-radius: 20px;' : '' %>">
+									<%= c == 0 ? 'Partito ✔' : (c == 5 ? 'Arrivato ✔' : '✔') %>
+								</td>
+							<% end %>
+						<% end %>
+					<% end %>
+				</tr>
+			</table>
 		</p>
 	</div>
 <% end %>

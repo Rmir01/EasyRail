@@ -31,7 +31,7 @@
 					<% end %>
         		</div>
 				<%= link_to "Home", root_path, class: (current_page?("/home") ? "active center" : "center") %>
-				<%= link_to "Stato treno", train_status_path, class: "center" %>
+				<%= link_to "Stato treno", train_status_path, class: (current_page?(train_status_path) || current_page?("/train_status/show") ? "active center" : "center") %>
 			</nav>
 		</header>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -54,19 +54,21 @@
     <%= yield %>
   </body>
   
-  <!--Parte inferiore-->
-	<footer class="bottom">
-		<table>
-			<tr>
-				<td>
-					<p>EasyRail &copy;</p>
-					<p>Un progetto per Lab. ASSI (Laboratorio di Architetture Software e Sicurezza Informatica) - A.A. 2024/25</p>
-					<p>Proff. Leonardo Querzoni e Daniele Cono D'Elia</p>
-				</td>
-			<tr>	
-				<td>Capitale Sociale 0&euro;.<p>Tutti i diritti riservati.</p></td>
-				<td colspan="">Sede legale Università La Sapienza -	Edificio Marco Polo, Viale Scalo San Lorenzo, 82, Roma</td>
-			</tr>
-		</table>
-	</footer>
+	<% unless footer_hidden? %>
+	<!--Parte inferiore-->
+		<footer class="bottom">
+			<table>
+				<tr>
+					<td>
+						<p>EasyRail &copy;</p>
+						<p>Un progetto per Lab. ASSI (Laboratorio di Architetture Software e Sicurezza Informatica) - A.A. 2024/25</p>
+						<p>Proff. Leonardo Querzoni e Daniele Cono D'Elia</p>
+					</td>
+				<tr>	
+					<td>Capitale Sociale 0&euro;.<p>Tutti i diritti riservati.</p></td>
+					<td colspan="">Sede legale Università La Sapienza -	Edificio Marco Polo, Viale Scalo San Lorenzo, 82, Roma</td>
+				</tr>
+			</table>
+		</footer>
+	<% end %>
 </html>

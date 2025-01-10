@@ -1,0 +1,49 @@
+<title>Risultati della ricerca</title>
+<% hide_footer! %>
+
+<style>
+  .button-prima {
+    background-color: rgb(16, 16, 16);
+  }
+  table {
+    margin: 10px auto 0 auto;
+    width: fit-content;
+    border-radius: 20px;
+    background-color: white;
+  }
+  td {
+    display: inline-block;
+    padding: 24px;
+    align-items: baseline;
+  }
+  .button {
+    display: inline;
+    margin: auto 10px auto auto;
+  }
+</style>
+
+<% if @travels.any? %>
+  <table>
+    <tr style="text-align: center;"><td><h2>Seleziona il tuo viaggio</h2></td></tr>
+  <% @travels.each do |travel| %>
+    <tr>
+      <table>
+        <tr>
+          <td>#<%= travel.cod %></td>
+          <td><%= travel.part %> &rarr; <%= travel.dest %></td>
+          <td><%= travel.hpar %> &rarr; <%= travel.harr %></td>
+          <% if params[:cs] == "LABASSI25" %>
+            <td class="button">Economy&nbsp;&nbsp;€<%= travel.pe*8/10 %>&nbsp;&nbsp;<span style="text-decoration: line-through;">€<%= travel.pe %></span></td>
+            <td class="button button-prima">Prima&nbsp;&nbsp;€<%= travel.pp*8/10 %>&nbsp;&nbsp;<span style="text-decoration: line-through;">€<%= travel.pp %></span></td>
+          <% else %>
+            <td class="button">Economy € <%= travel.pe %></td>
+            <td class="button button-prima">Prima € <%= travel.pp %></td>
+          <% end %>
+        </tr>
+      </table>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+  <p>Nessun viaggio trovato per la ricerca effettuata.</p>
+<% end %>

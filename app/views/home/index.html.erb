@@ -80,8 +80,8 @@
 	
 	<!--Form Cerca viaggio-->	
 	<div style="">
-	<form action="" method="get" onsubmit="salvaRicerca(); return (validaStz() && validaDate());" autocomplete="off" name="form" id="form" style="min-width: 666px; max-width: 666px; margin-bottom: 90px; text-align: center;">
-			<div class="formhead">Cerca viaggio</div> 
+	<form action="/travels/search" method="get" onsubmit="salvaRicerca(); return (validaStz() && validaDate());" autocomplete="off" name="form" id="form" style="min-width: 666px; max-width: 666px; margin-bottom: 90px; text-align: center;">
+		<div class="formhead">Cerca viaggio</div> 
 			<p>
 				<label for="part">Da</label>
 				<input list="stazioni" name="part" id="part" maxlength="27" placeholder=" inserisci stazione di partenza">
