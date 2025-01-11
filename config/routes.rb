@@ -17,12 +17,15 @@ Rails.application.routes.draw do
 
 
   # registrazione, login, logout
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
-  # area personale
+  # area personale, gestione biglietti
   get "/profile", to: "users#profile", as: "user_profile"
   get "/profile/edit", to: "users#edit", as: "edit_user_profile"
   patch "/profile", to: "users#update"
+  delete "profile/destroy/:pnr", to: "tickets#destroy", as: "ticket_destroy"
+  get "tickets/edit_time/:pnr/:hpar/:harr", to: "tickets#edit_time", as: "ticket_edit_time"
+  patch "tickets/update_time", to: "tickets#update_time", as: "ticket_update_time"
 
   # stato treno
   get "train_status", to: "train_status#index", as: "train_status"

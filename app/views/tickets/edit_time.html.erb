@@ -1,0 +1,73 @@
+
+<title>Modifica Orario</title>
+<% hide_footer! %>
+
+<style>
+  .button-prima {
+    background-color: rgb(16, 16, 16);
+  }
+  table {
+    margin: 10px auto 0 auto;
+    width: fit-content;
+    border-radius: 20px;
+    background-color: white;
+  }
+  td {
+    display: inline-block;
+    padding: 24px;
+    align-items: baseline;
+  }
+  .button {
+    display: inline;
+    margin: auto 10px auto auto;
+  }
+  .current-ticket {
+    font-weight: bold;
+    color: green;
+  }
+  .inline-form {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
+</style>
+
+<% if @available_travels.any? %>
+  <table>
+    <tr style="text-align: center;">
+      <td style="padding: 20px;" colspan="5"><h3>Seleziona un nuovo orario per il tuo biglietto</h3></td>
+    </tr>
+  <% @available_travels.each do |travel| %>
+    <tr>
+      <table>
+        <tr>
+          <td>#<%= travel.cod %></td>
+          <td><%= travel.part %> &rarr; <%= travel.dest %></td>
+          <td><%= travel.hpar %> &rarr; <%= travel.harr %></td>
+          <td>
+            <% if @ticket.hpar.strftime("%H:%M") == travel.hpar && @ticket.harr.strftime("%H:%M") == travel.harr %>
+              <span class="current-ticket">Il tuo biglietto attuale</span>
+            <% else %>
+              <%= form_with url: ticket_update_time_path, method: :patch, class: "inline-form" do |form| %>
+                  <%= form.hidden_field :pnr, value: @ticket.pnr %>
+                  <%= form.hidden_field :cod, value: @ticket.cod %>
+                  <%= form.hidden_field :part, value: travel.part %>
+                  <%= form.hidden_field :dest, value: travel.dest %>
+                  <%= form.hidden_field :hpar, value: travel.hpar %>
+                  <%= form.hidden_field :harr, value: travel.harr %>
+                  <%= form.submit "Scegli orario", class: "button" %>
+                <% end %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+  <table>
+    <tr>
+      <td><h2>Nessun viaggio trovato per la ricerca effettuata</h2></td>
+    </tr>
+  </table>
+<% end %>

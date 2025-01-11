@@ -82,7 +82,7 @@ class TravelsController < ApplicationController
 
     Ticket.create!(
       pnr: pnra,
-      uemail: current_user.email,
+      email: current_user.email,
       cod: andata.cod,
       part: andata.part,
       dest: andata.dest,
@@ -108,7 +108,7 @@ class TravelsController < ApplicationController
       @ritorno_harr = ritorno.harr
       Ticket.create!(
         pnr: pnrr,
-        uemail: current_user.email,
+        email: current_user.email,
         cod: ritorno.cod,
         part: ritorno.part,
         dest: ritorno.dest,

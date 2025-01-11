@@ -18,9 +18,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_10_204509) do
     t.datetime "created_at", null: false
   end
 
-  create_table "tickets", primary_key: ["pnr", "uemail"], force: :cascade do |t|
-    t.string "pnr", null: false
-    t.string "uemail", null: false
+  create_table "tickets", primary_key: "pnr", id: :string, force: :cascade do |t|
+    t.string "email", null: false
     t.integer "cod", null: false
     t.string "part", null: false
     t.string "dest", null: false
@@ -68,6 +67,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_10_204509) do
 
   add_foreign_key "searches", "users", column: "email", primary_key: "email"
   add_foreign_key "tickets", "travels", column: ["cod", "part", "dest"], primary_key: ["cod", "part", "dest"]
-  add_foreign_key "tickets", "users", column: "uemail", primary_key: "email"
+  add_foreign_key "tickets", "users", column: "email", primary_key: "email"
   add_foreign_key "travels", "trains", column: "cod"
 end

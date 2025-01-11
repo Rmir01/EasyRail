@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
+    @tickets = current_user.tickets
   end
 
   def edit
