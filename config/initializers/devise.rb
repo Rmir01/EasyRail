@@ -19,6 +19,9 @@ Devise.setup do |config|
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
+  config.omniauth :google_oauth2,
+    Rails.application.credentials.dig(:google_oauth_client_id),
+    Rails.application.credentials.dig(:google_oauth_client_secret)
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,

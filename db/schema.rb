@@ -62,6 +62,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_10_204509) do
     t.string "name", default: "", null: false
     t.string "surname", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "provider", default: "", null: false
+    t.string "uid", default: "", null: false
   end
 
   add_foreign_key "searches", "users", column: "email", primary_key: "email"
