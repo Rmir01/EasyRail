@@ -1,0 +1,116 @@
+<title>Seleziona il viaggio di ritorno</title>
+<% hide_footer! %>
+
+<style>
+  .button-prima {
+    background-color: rgb(16, 16, 16);
+  }
+  table {
+    margin: 10px auto 0 auto;
+    width: fit-content;
+    border-radius: 20px;
+    background-color: white;
+  }
+  td {
+    display: inline-block;
+    padding: 24px;
+    align-items: baseline;
+  }
+  .button {
+    display: inline;
+    margin: auto 10px auto auto;
+  }
+</style>
+
+<% if @travels.any? %>
+  <table>
+    <tr style="text-align: center;">
+      <td><h2>Seleziona il tuo viaggio di ritorno</h2></td>
+    </tr>
+    <tr style="text-align: center;">
+      <td style="padding-bottom: 20px;" colspan="5"><h5>(Prezzi a persona)</h5></td>
+    </tr>
+  <% @travels.each do |travel| %>
+    <tr>
+      <table>
+        <tr>
+          <td>#<%= travel.cod %></td>
+          <td><%= travel.part %> &rarr; <%= travel.dest %></td>
+          <td><%= travel.hpar %> &rarr; <%= travel.harr %></td>
+          <% if params[:cs] == "LABASSI25" %>
+            <td class="button">
+              <%= link_to "Economy €#{travel.pe * 8 / 10} 
+              <span style='text-decoration: line-through;'>€#{travel.pe}</span>".html_safe, 
+              travels_payment_path(andata_cod: @andata_cod, 
+			  						andata_part: @andata_part,
+									andata_dest: @andata_dest,
+									dataAnd: params[:dataAnd],
+									prezzoAnd: params[:prezzo],
+									ritorno_cod: travel.cod,
+									ritorno_part: travel.part,
+									ritorno_dest: travel.dest,
+									dataRit: params[:dataRit],
+                                    pass: params[:pass],
+									prezzoRit: travel.pe * params[:pass].to_i * 8 / 10
+									) %>
+            </td>
+            <td class="button button-prima">
+              <%= link_to "Prima €#{travel.pp * 8 / 10} 
+              <span style='text-decoration: line-through;'>€#{travel.pp}</span>".html_safe, 
+              travels_payment_path(andata_cod: @andata_cod, 
+			  						andata_part: @andata_part,
+									andata_dest: @andata_dest,
+									dataAnd: params[:dataAnd],
+									prezzoAnd: params[:prezzo],
+									ritorno_cod: travel.cod,
+									ritorno_part: travel.part,
+									ritorno_dest: travel.dest,
+									dataRit: params[:dataRit],
+                                    pass: params[:pass],
+									prezzoRit: travel.pp * params[:pass].to_i * 8 / 10
+									) %>
+			</td>
+          <% else %>
+            <td class="button">
+              <%= link_to "Economy €#{travel.pe}", 
+              travels_payment_path(andata_cod: @andata_cod, 
+			  						andata_part: @andata_part,
+									andata_dest: @andata_dest,
+									dataAnd: params[:dataAnd],
+									prezzoAnd: params[:prezzo],
+									ritorno_cod: travel.cod,
+									ritorno_part: travel.part,
+									ritorno_dest: travel.dest,
+									dataRit: params[:dataRit],
+                                    pass: params[:pass],
+									prezzoRit: travel.pe * params[:pass].to_i
+									) %>
+            </td>
+            <td class="button button-prima">
+              <%= link_to "Prima €#{travel.pp}", 
+              travels_payment_path(andata_cod: @andata_cod, 
+			  						andata_part: @andata_part,
+									andata_dest: @andata_dest,
+									dataAnd: params[:dataAnd],
+									prezzoAnd: params[:prezzo],
+									ritorno_cod: travel.cod,
+									ritorno_part: travel.part,
+									ritorno_dest: travel.dest,
+									dataRit: params[:dataRit],
+                                    pass: params[:pass],
+									prezzoRit: travel.pp * params[:pass].to_i
+									) %>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+  <table>
+    <tr>
+      <td><h2>Nessun viaggio trovato per il ritorno</h2></td>
+    </tr>
+  </table>
+<% end %>

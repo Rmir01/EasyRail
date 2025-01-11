@@ -1,13 +1,13 @@
 class CreateTravels < ActiveRecord::Migration[8.0]
   def change
     create_table :travels, primary_key: [ :cod, :part, :dest ] do |t|
-      t.integer 'cod'   # codice del trenoCompleto associato (references trenoCompleto)
-      t.string 'part'   # stazione di partenza
-      t.string 'dest'   # destinazione
-      t.string 'hpar'   # orario partenza
-      t.string 'harr'   # orario arrivo
-      t.integer 'pe'    # prezzo classe economy
-      t.integer 'pp'    # prezzo prima classe
+      t.integer 'cod', null: false   # codice del trenoCompleto associato (references trenoCompleto)
+      t.string 'part', null: false   # stazione di partenza
+      t.string 'dest', null: false   # destinazione
+      t.string 'hpar', null: false   # orario partenza
+      t.string 'harr', null: false   # orario arrivo
+      t.integer 'pe', null: false    # prezzo classe economy
+      t.integer 'pp', null: false    # prezzo prima classe
     end
 
     add_check_constraint :travels, "pe > 0", name: "min_price_check"

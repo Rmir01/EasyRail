@@ -1,0 +1,127 @@
+<title>Riepilogo e pagamento</title>
+<% hide_footer! %>
+
+<style>
+	table {
+		margin: 25px auto 0 auto;
+		background-color: white;
+		width: fit-content;
+		text-align: center;
+		border-radius: 10px;
+	}
+	td {
+		padding: 15px;
+		border-bottom: 1px solid #ddd;
+	}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = String(currentDate.getMonth() + 1).padStart(2, '0'); // Mese in formato "MM"
+    const minDate = `${currentYear}-${currentMonth}`; // Formato "YYYY-MM"
+    document.getElementById("cardExpiry").setAttribute("min", minDate);
+  });
+</script>
+<% %>
+<table>
+	<td style="border: none;" colspan="5"><h2>Riepilogo</h2></td>
+	<tr>
+		<td><h3>Stai acquistando:</h3></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Viaggio di andata:</td>
+		<td>In data <%= Date.strptime(params[:dataAnd], '%Y-%m-%d').strftime('%d/%m/%Y') %></td>
+		<td><%= @andata_part %> &rarr; <%= @andata_dest %></td>
+		<td><%= @andata_hpar %> &rarr; <%= @andata_harr %></td>
+		<td><%= params[:pass].to_i %> x €<%= params[:prezzoAnd].to_i / params[:pass].to_i %></td>
+	</tr>
+	<% if @ritorno_cod.present? %>
+		<tr>
+		<td>Viaggio di ritorno:</td>
+		<td>In data <%= Date.strptime(params[:dataRit], '%Y-%m-%d').strftime('%d/%m/%Y') %></td>
+		<td><%= @ritorno_part %> &rarr; <%= @ritorno_dest %></td>
+		<td><%= @ritorno_hpar %> &rarr; <%= @ritorno_harr %></td>
+		<td><%= params[:pass].to_i %> x €<%= params[:prezzoRit].to_i / params[:pass].to_i %></td>
+		</tr>
+	<% end %>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td style="text-align: center;" colspan="2">
+			<% if params[:pass].to_i == 1 %>
+				<h4>Totale: €<%= format('%.2f', params[:prezzoAnd].to_i + params[:prezzoRit].to_i) %></h4>
+			<% else %>
+				<% if @ritorno_cod.present? %>
+					<h4>Totale: <%= params[:pass].to_i %> x
+								(€	<%= format('%.2f', params[:prezzoAnd].to_i / params[:pass].to_i) %> +
+								 €	<%= format('%.2f', params[:prezzoRit].to_i / params[:pass].to_i) %>) =
+								 €	<%= format('%.2f', params[:prezzoAnd].to_i + params[:prezzoRit].to_i) %></h4>
+				<% else %>
+					<h4>Totale: <%= params[:pass].to_i %> x € <%= format('%.2f', params[:prezzoAnd].to_i / params[:pass].to_i) %> = € <%= format('%.2f', params[:prezzoAnd].to_i) %></h4>
+				<% end %>
+			<% end %>
+		</td>
+	</tr>
+</table>
+<div class="container mt-5" style="margin-bottom: 25px;">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h3 class="text-center mb-4">Pagamento</h3>
+          <form action="<%= travels_confirmed_purchase_path %>" method="post">
+			<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+            <div class="mb-3">
+              <label for="cardholderName" class="form-label">Nome e cognome del titolare</label>
+              <input type="text" class="form-control" id="cardholderName" name="cardholder_name" placeholder="Mario Rossi" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="cardNumber" class="form-label">Numero della carta</label>
+              <input type="text" class="form-control" id="cardNumber" name="card_number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label for="cardExpiry" class="form-label">Scadenza</label>
+                <input type="month" class="form-control" id="cardExpiry" name="card_expiry" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="cardCvc" class="form-label">CVC/CVV</label>
+                <input type="text" class="form-control" id="cardCvc" name="card_cvc" placeholder="123" maxlength="3" required>
+              </div>
+            </div>
+				<input type="hidden" name="cod" value="<%= @andata_cod %>">
+				<input type="hidden" name="date" value="<%= params[:dataAnd] %>">
+				<input type="hidden" name="part" value="<%= @andata_part %>">
+				<input type="hidden" name="hpar" value="<%= @andata_hpar %>">
+				<input type="hidden" name="dest" value="<%= @andata_dest %>">
+				<input type="hidden" name="harr" value="<%= @andata_harr %>">
+				<input type="hidden" name="pass" value="<%= params[:pass] %>">
+				<input type="hidden" name="price" value="<%= params[:prezzoAnd] %>">
+				<% if @ritorno_cod.present? %>
+					<input type="hidden" name="cod" value="<%= @ritorno_cod %>">
+					<input type="hidden" name="date" value="<%= params[:dataAnd] %>">
+					<input type="hidden" name="part" value="<%= @ritorno_part %>">
+					<input type="hidden" name="hpar" value="<%= @ritorno_hpar %>">
+					<input type="hidden" name="dest" value="<%= @ritorno_dest %>">
+					<input type="hidden" name="harr" value="<%= @ritorno_harr %>">
+					<input type="hidden" name="pass" value="<%= params[:pass] %>">
+					<input type="hidden" name="price" value="<%= params[:prezzoRit] %>">
+				<% end %>
+            <button type="submit" class="btn btn-primary w-100 mt-4">Prenota</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

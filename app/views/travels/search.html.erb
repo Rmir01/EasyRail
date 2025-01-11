@@ -24,7 +24,12 @@
 
 <% if @travels.any? %>
   <table>
-    <tr style="text-align: center;"><td><h2>Seleziona il tuo viaggio</h2></td></tr>
+    <tr style="text-align: center;">
+      <td style="padding: 20px 20px 0 20px;" colspan="5"><h2>Seleziona il tuo viaggio</h2></td>
+    </tr>
+    <tr style="text-align: center;">
+      <td style="padding-bottom: 20px;" colspan="5"><h5>(Prezzi a persona)</h5></td>
+    </tr>
   <% @travels.each do |travel| %>
     <tr>
       <table>
@@ -33,11 +38,93 @@
           <td><%= travel.part %> &rarr; <%= travel.dest %></td>
           <td><%= travel.hpar %> &rarr; <%= travel.harr %></td>
           <% if params[:cs] == "LABASSI25" %>
-            <td class="button">Economy&nbsp;&nbsp;€<%= travel.pe*8/10 %>&nbsp;&nbsp;<span style="text-decoration: line-through;">€<%= travel.pe %></span></td>
-            <td class="button button-prima">Prima&nbsp;&nbsp;€<%= travel.pp*8/10 %>&nbsp;&nbsp;<span style="text-decoration: line-through;">€<%= travel.pp %></span></td>
+            <td class="button">
+              <%= link_to "Economy €#{travel.pe * 8 / 10} 
+              <span style='text-decoration: line-through;'>€#{travel.pe}</span>".html_safe, 
+              params[:dataRit].present? ? travels_return_path(cod: travel.cod,
+                                                              part: travel.part,
+                                                              dest: travel.dest,
+                                                              dataAnd: params[:dataAnd],
+                                                              dataRit: params[:dataRit],
+                                                              pass: params[:pass],
+                                                              prezzo: travel.pe * params[:pass].to_i * 8 / 10,
+                                                              cs: params[:cs])
+                                                              :
+                                          travels_payment_path(andata_cod: travel.cod,
+                                                              andata_part: travel.part,
+                                                              andata_dest: travel.dest,
+                                                              dataAnd: params[:dataAnd],
+                                                              dataRit: params[:dataRit],
+                                                              pass: params[:pass],
+                                                              prezzoAnd: travel.pe * params[:pass].to_i * 8 / 10,
+                                                              cs: params[:cs]) 
+                                                              %>
+            </td>
+            <td class="button button-prima">
+              <%= link_to "Prima €#{travel.pp * 8 / 10} 
+              <span style='text-decoration: line-through;'>€#{travel.pp}</span>".html_safe, 
+              params[:dataRit].present? ? travels_return_path(cod: travel.cod,
+                                                              part: travel.part,
+                                                              dest: travel.dest,
+                                                              dataAnd: params[:dataAnd],
+                                                              dataRit: params[:dataRit],
+                                                              pass: params[:pass],
+                                                              prezzo: travel.pp * params[:pass].to_i * 8 / 10,
+                                                              cs: params[:cs])
+                                                              :
+                                          travels_payment_path(andata_cod: travel.cod,
+                                                              andata_part: travel.part,
+                                                              andata_dest: travel.dest,
+                                                              dataAnd: params[:dataAnd],
+                                                              dataRit: params[:dataRit],
+                                                              pass: params[:pass],
+                                                              prezzoAnd: travel.pp * params[:pass].to_i * 8 / 10,
+                                                              cs: params[:cs]) 
+                                                              %>
+            </td>
           <% else %>
-            <td class="button">Economy € <%= travel.pe %></td>
-            <td class="button button-prima">Prima € <%= travel.pp %></td>
+            <td class="button">
+              <%= link_to "Economy €#{travel.pe}", 
+              params[:dataRit].present? ? travels_return_path(cod: travel.cod,
+                                                              part: travel.part,
+                                                              dest: travel.dest,
+                                                              dataAnd: params[:dataAnd],
+                                                              dataRit: params[:dataRit],
+                                                              pass: params[:pass],
+                                                              prezzo: travel.pe * params[:pass].to_i,
+                                                              cs: params[:cs])
+                                                              :
+                                          travels_payment_path(andata_cod: travel.cod,
+                                                              andata_part: travel.part,
+                                                              andata_dest: travel.dest,
+                                                              dataAnd: params[:dataAnd],
+                                                              dataRit: params[:dataRit],
+                                                              pass: params[:pass],
+                                                              prezzoAnd: travel.pe * params[:pass].to_i,
+                                                              cs: params[:cs]) 
+                                                              %>
+            </td>
+            <td class="button button-prima">
+              <%= link_to "Prima €#{travel.pp}", 
+              params[:dataRit].present? ? travels_return_path(cod: travel.cod,
+                                                              part: travel.part,
+                                                              dest: travel.dest,
+                                                              dataAnd: params[:dataAnd],
+                                                              dataRit: params[:dataRit],
+                                                              pass: params[:pass],
+                                                              prezzo: travel.pp * params[:pass].to_i,
+                                                              cs: params[:cs])
+                                                              :
+                                          travels_payment_path(andata_cod: travel.cod,
+                                                              andata_part: travel.part,
+                                                              andata_dest: travel.dest,
+                                                              dataAnd: params[:dataAnd],
+                                                              dataRit: params[:dataRit],
+                                                              pass: params[:pass],
+                                                              prezzoAnd: travel.pp * params[:pass].to_i,
+                                                              cs: params[:cs]) 
+                                                              %>
+            </td>
           <% end %>
         </tr>
       </table>
@@ -45,5 +132,9 @@
   <% end %>
   </table>
 <% else %>
-  <p>Nessun viaggio trovato per la ricerca effettuata.</p>
+  <table>
+    <tr>
+      <td><h2>Nessun viaggio trovato per la ricerca effettuata</h2></td>
+    </tr>
+  </table>
 <% end %>
