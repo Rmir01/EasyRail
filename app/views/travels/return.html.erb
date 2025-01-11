@@ -41,63 +41,67 @@
             <td class="button">
               <%= link_to "Economy €#{travel.pe * 8 / 10} 
               <span style='text-decoration: line-through;'>€#{travel.pe}</span>".html_safe, 
-              travels_payment_path(andata_cod: @andata_cod, 
-			  						andata_part: @andata_part,
+              travels_payment_path(
+                  andata_cod: @andata_cod, 
+			  					andata_part: @andata_part,
 									andata_dest: @andata_dest,
 									dataAnd: params[:dataAnd],
-									prezzoAnd: params[:prezzo],
+									prezzoAnd: params[:prezzoAnd],
 									ritorno_cod: travel.cod,
 									ritorno_part: travel.part,
 									ritorno_dest: travel.dest,
 									dataRit: params[:dataRit],
-                                    pass: params[:pass],
+                  pass: params[:pass],
 									prezzoRit: travel.pe * params[:pass].to_i * 8 / 10
 									) %>
             </td>
             <td class="button button-prima">
               <%= link_to "Prima €#{travel.pp * 8 / 10} 
               <span style='text-decoration: line-through;'>€#{travel.pp}</span>".html_safe, 
-              travels_payment_path(andata_cod: @andata_cod, 
-			  						andata_part: @andata_part,
+              travels_payment_path(
+                  andata_cod: @andata_cod, 
+			  					andata_part: @andata_part,
 									andata_dest: @andata_dest,
 									dataAnd: params[:dataAnd],
-									prezzoAnd: params[:prezzo],
+									prezzoAnd: params[:prezzoAnd],
 									ritorno_cod: travel.cod,
 									ritorno_part: travel.part,
 									ritorno_dest: travel.dest,
 									dataRit: params[:dataRit],
-                                    pass: params[:pass],
+                  pass: params[:pass],
 									prezzoRit: travel.pp * params[:pass].to_i * 8 / 10
 									) %>
 			</td>
           <% else %>
             <td class="button">
               <%= link_to "Economy €#{travel.pe}", 
-              travels_payment_path(andata_cod: @andata_cod, 
-			  						andata_part: @andata_part,
+              travels_payment_path(
+                  andata_cod: @andata_cod, 
+			  					andata_part: @andata_part,
 									andata_dest: @andata_dest,
 									dataAnd: params[:dataAnd],
-									prezzoAnd: params[:prezzo],
+									prezzoAnd: params[:prezzoAnd],
 									ritorno_cod: travel.cod,
 									ritorno_part: travel.part,
 									ritorno_dest: travel.dest,
 									dataRit: params[:dataRit],
-                                    pass: params[:pass],
+                  pass: params[:pass],
 									prezzoRit: travel.pe * params[:pass].to_i
 									) %>
             </td>
             <td class="button button-prima">
               <%= link_to "Prima €#{travel.pp}", 
-              travels_payment_path(andata_cod: @andata_cod, 
-			  						andata_part: @andata_part,
+              travels_payment_path(
+                  andata_cod: @andata_cod, 
+			  					andata_part: @andata_part,
 									andata_dest: @andata_dest,
 									dataAnd: params[:dataAnd],
-									prezzoAnd: params[:prezzo],
+									prezzoAnd: params[:prezzoAnd],
 									ritorno_cod: travel.cod,
 									ritorno_part: travel.part,
 									ritorno_dest: travel.dest,
 									dataRit: params[:dataRit],
-                                    pass: params[:pass],
+                  pass: params[:pass],
 									prezzoRit: travel.pp * params[:pass].to_i
 									) %>
             </td>

@@ -24,11 +24,9 @@ class TravelsController < ApplicationController
 
     @andata_cod = andata.cod
     @andata_part = andata.part
-    @andata_hpar = andata.hpar
     @andata_dest = andata.dest
+    @andata_hpar = andata.hpar
     @andata_harr = andata.harr
-    @andata_pe = andata.pe
-    @andata_pp = andata.pp
 
     if params[:dataRit] == params[:dataAnd]
       @travels = Travel.where(part: andata.dest, dest: andata.part)
@@ -42,17 +40,15 @@ class TravelsController < ApplicationController
 
   def payment
     andata = Travel.find_by(
-      cod: params[:andata_cod],
+      cod: (params[:andata_cod]).to_i,
       part: params[:andata_part],
       dest: params[:andata_dest]
     )
     @andata_cod = andata.cod
     @andata_part = andata.part
-    @andata_hpar = andata.hpar
     @andata_dest = andata.dest
+    @andata_hpar = andata.hpar
     @andata_harr = andata.harr
-    @andata_pe = andata.pe
-    @andata_pp = andata.pp
 
     ritorno = nil
     if params[:ritorno_cod].present? && params[:ritorno_part].present? && params[:ritorno_dest].present?
@@ -66,34 +62,71 @@ class TravelsController < ApplicationController
       @ritorno_hpar = ritorno.hpar
       @ritorno_dest = ritorno.dest
       @ritorno_harr = ritorno.harr
-      @ritorno_pe = ritorno.pe
-      @ritorno_pp = ritorno.pp
     end
   end
 
   def confirmed_purchase
-    # Generazione PNR unico
-    pnr = generate_unique_pnr
 
-    # Creazione del biglietto
+    # Creazione biglietto andata
+    andata = Travel.find_by(
+      cod: params[:andata_cod],
+      part: params[:andata_part],
+      dest: params[:andata_dest]
+    )
+    pnra = generate_unique_pnr
+    @andata_cod = andata.cod
+    @andata_part = andata.part
+    @andata_hpar = andata.hpar
+    @andata_dest = andata.dest
+    @andata_harr = andata.harr
+
     Ticket.create!(
-      pnr: pnr,
+      pnr: pnra,
       uemail: current_user.email,
+      cod: andata.cod,
+      part: andata.part,
+      dest: andata.dest,
+      hpar: andata.hpar,
+      harr: andata.harr,
       date: Date.parse(params[:dataAnd]),
-      dpt_station: params[:dpt_station],
-      dpt_time: params[:dpt_time],
-      arv_station: params[:arv_station],
-      arv_time: params[:arv_time],
-      psg_count: params[:psg_count].to_i,
-      price: params[:price].to_i
+      pass: params[:pass].to_i,
+      price: params[:prezzoAnd].to_i
     )
 
-    # Reindirizzamento alla schermata di conferma
-    redirect_to travels_confirm_path(pnr: pnr)
+    # Creazione biglietto ritorno
+    ritorno = Travel.find_by(
+      cod: params[:ritorno_cod],
+      part: params[:ritorno_part],
+      dest: params[:ritorno_dest]
+      )
+    if ritorno
+      pnrr = generate_unique_pnr
+      @ritorno_cod = ritorno.cod
+      @ritorno_part = ritorno.part
+      @ritorno_hpar = ritorno.hpar
+      @ritorno_dest = ritorno.dest
+      @ritorno_harr = ritorno.harr
+      Ticket.create!(
+        pnr: pnrr,
+        uemail: current_user.email,
+        cod: ritorno.cod,
+        part: ritorno.part,
+        dest: ritorno.dest,
+        hpar: ritorno.hpar,
+        harr: ritorno.harr,
+        date: Date.parse(params[:dataRit]),
+        pass: params[:pass].to_i,
+        price: params[:prezzoRit].to_i
+      )
+    end
+
+    # Reindirizzamento schermata di conferma coi PNR generati
+    redirect_to travels_confirm_path(pnra: pnra, pnrr: pnrr)
   end
 
   def confirm
-    @pnr = params[:pnr]
+    @pnra = params[:pnra]
+    @pnrr = params[:pnrr]
   end
 
   private

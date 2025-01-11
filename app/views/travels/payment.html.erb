@@ -26,16 +26,13 @@
 </script>
 <% %>
 <table>
-	<td style="border: none;" colspan="5"><h2>Riepilogo</h2></td>
+	<td style="border: none;" colspan="6"><h2>Riepilogo</h2></td>
 	<tr>
-		<td><h3>Stai acquistando:</h3></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td colspan="6" style="text-align: left;"><h3>Stai acquistando:</h3></td>
 	</tr>
 	<tr>
 		<td>Viaggio di andata:</td>
+		<td>Treno #<%=@andata_cod%></td>
 		<td>In data <%= Date.strptime(params[:dataAnd], '%Y-%m-%d').strftime('%d/%m/%Y') %></td>
 		<td><%= @andata_part %> &rarr; <%= @andata_dest %></td>
 		<td><%= @andata_hpar %> &rarr; <%= @andata_harr %></td>
@@ -44,6 +41,7 @@
 	<% if @ritorno_cod.present? %>
 		<tr>
 		<td>Viaggio di ritorno:</td>
+		<td>Treno #<%=@ritorno_cod%></td>
 		<td>In data <%= Date.strptime(params[:dataRit], '%Y-%m-%d').strftime('%d/%m/%Y') %></td>
 		<td><%= @ritorno_part %> &rarr; <%= @ritorno_dest %></td>
 		<td><%= @ritorno_hpar %> &rarr; <%= @ritorno_harr %></td>
@@ -51,6 +49,7 @@
 		</tr>
 	<% end %>
 	<tr>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -76,7 +75,7 @@
       <div class="card shadow">
         <div class="card-body">
           <h3 class="text-center mb-4">Pagamento</h3>
-          <form action="<%= travels_confirmed_purchase_path %>" method="post">
+          <div>
 			<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
             <div class="mb-3">
@@ -100,26 +99,34 @@
                 <input type="text" class="form-control" id="cardCvc" name="card_cvc" placeholder="123" maxlength="3" required>
               </div>
             </div>
-				<input type="hidden" name="cod" value="<%= @andata_cod %>">
-				<input type="hidden" name="date" value="<%= params[:dataAnd] %>">
-				<input type="hidden" name="part" value="<%= @andata_part %>">
-				<input type="hidden" name="hpar" value="<%= @andata_hpar %>">
-				<input type="hidden" name="dest" value="<%= @andata_dest %>">
-				<input type="hidden" name="harr" value="<%= @andata_harr %>">
-				<input type="hidden" name="pass" value="<%= params[:pass] %>">
-				<input type="hidden" name="price" value="<%= params[:prezzoAnd] %>">
+				
 				<% if @ritorno_cod.present? %>
-					<input type="hidden" name="cod" value="<%= @ritorno_cod %>">
-					<input type="hidden" name="date" value="<%= params[:dataAnd] %>">
-					<input type="hidden" name="part" value="<%= @ritorno_part %>">
-					<input type="hidden" name="hpar" value="<%= @ritorno_hpar %>">
-					<input type="hidden" name="dest" value="<%= @ritorno_dest %>">
-					<input type="hidden" name="harr" value="<%= @ritorno_harr %>">
-					<input type="hidden" name="pass" value="<%= params[:pass] %>">
-					<input type="hidden" name="price" value="<%= params[:prezzoRit] %>">
+					<%= button_to "Conferma acquisto", 
+					travels_confirmed_purchase_path(
+						andata_cod: @andata_cod, 
+						andata_part: @andata_part,
+						andata_dest: @andata_dest,
+						dataAnd: params[:dataAnd],
+						prezzoAnd: params[:prezzoAnd],
+						pass: params[:pass],
+						ritorno_cod: @ritorno_cod,
+						ritorno_part: @ritorno_part,
+						ritorno_dest: @ritorno_dest,
+						dataRit: params[:dataRit],
+						prezzoRit: params[:prezzoRit]
+						) %>
+				<% else %>
+					<%= button_to "Conferma acquisto", 
+					travels_confirmed_purchase_path(
+						andata_cod: @andata_cod, 
+						andata_part: @andata_part,
+						andata_dest: @andata_dest,
+						dataAnd: params[:dataAnd],
+						prezzoAnd: params[:prezzoAnd],
+						pass: params[:pass]
+						) %>
 				<% end %>
-            <button type="submit" class="btn btn-primary w-100 mt-4">Prenota</button>
-          </form>
+          </div>
         </div>
       </div>
     </div>

@@ -47,7 +47,7 @@
                                                               dataAnd: params[:dataAnd],
                                                               dataRit: params[:dataRit],
                                                               pass: params[:pass],
-                                                              prezzo: travel.pe * params[:pass].to_i * 8 / 10,
+                                                              prezzoAnd: travel.pe * params[:pass].to_i * 8 / 10,
                                                               cs: params[:cs])
                                                               :
                                           travels_payment_path(andata_cod: travel.cod,
@@ -69,7 +69,7 @@
                                                               dataAnd: params[:dataAnd],
                                                               dataRit: params[:dataRit],
                                                               pass: params[:pass],
-                                                              prezzo: travel.pp * params[:pass].to_i * 8 / 10,
+                                                              prezzoAnd: travel.pp * params[:pass].to_i * 8 / 10,
                                                               cs: params[:cs])
                                                               :
                                           travels_payment_path(andata_cod: travel.cod,
@@ -91,14 +91,13 @@
                                                               dataAnd: params[:dataAnd],
                                                               dataRit: params[:dataRit],
                                                               pass: params[:pass],
-                                                              prezzo: travel.pe * params[:pass].to_i,
+                                                              prezzoAnd: travel.pe * params[:pass].to_i,
                                                               cs: params[:cs])
                                                               :
                                           travels_payment_path(andata_cod: travel.cod,
                                                               andata_part: travel.part,
                                                               andata_dest: travel.dest,
                                                               dataAnd: params[:dataAnd],
-                                                              dataRit: params[:dataRit],
                                                               pass: params[:pass],
                                                               prezzoAnd: travel.pe * params[:pass].to_i,
                                                               cs: params[:cs]) 
@@ -112,7 +111,7 @@
                                                               dataAnd: params[:dataAnd],
                                                               dataRit: params[:dataRit],
                                                               pass: params[:pass],
-                                                              prezzo: travel.pp * params[:pass].to_i,
+                                                              prezzoAnd: travel.pp * params[:pass].to_i,
                                                               cs: params[:cs])
                                                               :
                                           travels_payment_path(andata_cod: travel.cod,

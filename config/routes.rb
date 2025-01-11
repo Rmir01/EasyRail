@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   # ricerca treni (andata, andata/ritorno, pagamento, acquisto confermato)
   get "travels/search", to: "travels#search", as: "travels_search"
-  get "travels/return/:cod/:part/:dest/:dataAnd/:dataRit", to: "travels#return", as: "travels_return"
-  get "travels/payment/:andata_cod/:andata_part/:andata_dest(/:ritorno_cod/:ritorno_part/:ritorno_dest)", to: "travels#payment", as: "travels_payment"
+  get "travels/return", to: "travels#return", as: "travels_return"
+  get "travels/payment", to: "travels#payment", as: "travels_payment"
   post "travels/confirmed_purchase", to: "travels#confirmed_purchase", as: "travels_confirmed_purchase"
   get "travels/confirm", to: "travels#confirm", as: "travels_confirm"
 

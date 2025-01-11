@@ -1,0 +1,21 @@
+<title>Acquisto effettuato</title>
+
+<div class="confirmation">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow text-center">
+          <div class="card-body">
+            <h1 class="text-success mb-3">Acquisto effettuato correttamente!</h1>
+            <p class="fs-5">PNR: <strong><%= @pnra %></strong><% if @pnrr %> e <strong><%= @pnrr %></strong><% end %></p>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+              <%= link_to "Torna alla Homepage", root_path, class: "btn btn-primary btn-lg" %>
+              <%= link_to "Vai all'Area Personale", user_profile_path, class: "btn btn-primary btn-lg" %>
+            </div>
+              <img src="<%= asset_path('acquistoabuonfine.jpg') %>" class="img-fluid mb-4" alt="Acquisto a buon fine" style="max-height: 200px; margin-top:25px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
