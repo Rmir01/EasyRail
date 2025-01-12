@@ -73,7 +73,7 @@
 	<td class="info">
 		<%= form_with url: destroy_user_session_path, method: :delete do %>
 		<div class="formhead">I tuoi dati</div>
-		<div <% if @user.email == "ad@min.it" %> style="text-align: center;" <% end %>>
+		<div <% if @user.admin? %> style="text-align: center;" <% end %>>
 			<p>Nome: <%= @user.name %></p>
 			<p>Cognome: <%= @user.surname %></p>
 			<p>Email: <%= @user.email %></p>
@@ -85,7 +85,7 @@
 		<% end %>
 	</td>
 
-	<% if @user.email != "ad@min.it" %>
+	<% if !@user.admin? %>
 		<td class="viaggi">
 			<div class="form">
 				<div class="formhead" style="padding-top: 10px;">I tuoi viaggi</div>
@@ -139,7 +139,7 @@
 	</tr>
 </table>
 
-<% if @user.email == "ad@min.it" %>
+<% if @user.admin? %>
 	<%= link_to "AREA FUNZIONALITÁ AMMINISTRATORE", root_path, class: "button admin" %>
 <% end %>
 

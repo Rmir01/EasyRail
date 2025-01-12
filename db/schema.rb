@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_10_204509) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_12_083344) do
   create_table "searches", force: :cascade do |t|
     t.string "departure_station", null: false
     t.string "arrival_station", null: false
@@ -63,6 +63,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_10_204509) do
     t.string "encrypted_password", default: "", null: false
     t.string "provider", default: "", null: false
     t.string "uid", default: "", null: false
+    t.boolean "admin", default: false, null: false
   end
 
   add_foreign_key "searches", "users", column: "email", primary_key: "email"
