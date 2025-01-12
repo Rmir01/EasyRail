@@ -70,65 +70,66 @@
 	</tr>
 </table>
 <div class="container mt-5" style="margin-bottom: 25px;">
-  <div class="row justify-content-center">
-    <div class="col-md-4">
-      <div class="card shadow">
-        <div class="card-body">
-          <h3 class="text-center mb-4">Pagamento</h3>
-          <div>
-			<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	<div class="row justify-content-center">
+		<div class="col-md-4">
+			<div class="card shadow">
+				<div class="card-body">
+					<h3 class="text-center mb-4">Pagamento</h3>
+					<div>
+						<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-            <div class="mb-3">
-              <label for="cardholderName" class="form-label">Nome e cognome del titolare</label>
-              <input type="text" class="form-control" id="cardholderName" name="cardholder_name" placeholder="Mario Rossi" required>
-            </div>
+						<div class="mb-3">
+							<label for="cardholderName" class="form-label">Nome e cognome del titolare</label>
+							<input type="text" class="form-control" id="cardholderName" name="cardholder_name" placeholder="Mario Rossi" required>
+						</div>
 
-            <div class="mb-3">
-              <label for="cardNumber" class="form-label">Numero della carta</label>
-              <input type="text" class="form-control" id="cardNumber" name="card_number" placeholder="1234 5678 9012 3456" maxlength="19" required>
-            </div>
+						<div class="mb-3">
+							<label for="cardNumber" class="form-label">Numero della carta</label>
+							<input type="text" class="form-control" id="cardNumber" name="card_number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+						</div>
 
-            <div class="row">
-              <div class="col-md-6">
-                <label for="cardExpiry" class="form-label">Scadenza</label>
-                <input type="month" class="form-control" id="cardExpiry" name="card_expiry" required>
-              </div>
+						<div class="row">
+							<div class="col-md-6">
+								<label for="cardExpiry" class="form-label">Scadenza</label>
+								<input type="month" class="form-control" id="cardExpiry" name="card_expiry" required>
+							</div>
 
-              <div class="col-md-6">
-                <label for="cardCvc" class="form-label">CVC/CVV</label>
-                <input type="text" class="form-control" id="cardCvc" name="card_cvc" placeholder="123" maxlength="3" required>
-              </div>
-            </div>
-				
-				<% if @ritorno_cod.present? %>
-					<%= button_to "Conferma acquisto", 
-					travels_confirmed_purchase_path(
-						andata_cod: @andata_cod, 
-						andata_part: @andata_part,
-						andata_dest: @andata_dest,
-						dataAnd: params[:dataAnd],
-						prezzoAnd: params[:prezzoAnd],
-						pass: params[:pass],
-						ritorno_cod: @ritorno_cod,
-						ritorno_part: @ritorno_part,
-						ritorno_dest: @ritorno_dest,
-						dataRit: params[:dataRit],
-						prezzoRit: params[:prezzoRit]
-						) %>
-				<% else %>
-					<%= button_to "Conferma acquisto", 
-					travels_confirmed_purchase_path(
-						andata_cod: @andata_cod, 
-						andata_part: @andata_part,
-						andata_dest: @andata_dest,
-						dataAnd: params[:dataAnd],
-						prezzoAnd: params[:prezzoAnd],
-						pass: params[:pass]
-						) %>
-				<% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+							<div class="col-md-6">
+								<label for="cardCvc" class="form-label">CVC/CVV</label>
+								<input type="text" class="form-control" id="cardCvc" name="card_cvc" placeholder="123" maxlength="3" required>
+							</div>
+						</div>
+							<div class="row justify-content-center">
+								<% if @ritorno_cod.present? %>
+									<%= button_to "Conferma acquisto",
+									travels_confirmed_purchase_path(
+										andata_cod: @andata_cod, 
+										andata_part: @andata_part,
+										andata_dest: @andata_dest,
+										dataAnd: params[:dataAnd],
+										prezzoAnd: params[:prezzoAnd],
+										pass: params[:pass],
+										ritorno_cod: @ritorno_cod,
+										ritorno_part: @ritorno_part,
+										ritorno_dest: @ritorno_dest,
+										dataRit: params[:dataRit],
+										prezzoRit: params[:prezzoRit]
+										), class: "btn btn-primary" %>
+								<% else %>
+									<%= button_to "Conferma acquisto", 
+									travels_confirmed_purchase_path(
+										andata_cod: @andata_cod, 
+										andata_part: @andata_part,
+										andata_dest: @andata_dest,
+										dataAnd: params[:dataAnd],
+										prezzoAnd: params[:prezzoAnd],
+										pass: params[:pass]
+										), class: "btn btn-primary" %>
+								<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
