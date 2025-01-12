@@ -137,10 +137,12 @@
 				<label for="dataRit" id="lr" style="margin-left: 24px; opacity: 0.5;">Ritorno</label>
 				<input oninput="vincoliDate()" type="date" name="dataRit" id="dataRit" max="2025-06-30" disabled style="width: 160px; opacity: 0.5;">
 			</p>
-			<label for="pass">Passeggeri (massimo: 10)</label>
+			<div id="passSelector">
+				<label for="pass">Passeggeri (massimo: 10)</label>
 				<button type="button" onclick="subPass()" class="addSubPass">-</button>
 				<input type="number" name="pass" id="pass" readonly value="1" style="width: 40px; border: hidden; background-color: rgb(224, 224, 224); text-align: center;">
 				<button type="button" onclick="addPass()" class="addSubPass">+</button>
+			</div>
 			<p>
 				<label for="cs">Codice sconto (opzionale) </label>
 				<input class="cs" type="text" name="cs" id="cs" style="width: 160px;">

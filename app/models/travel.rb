@@ -1,3 +1,3 @@
 class Travel < ActiveRecord::Base
-	self.table_name = "travels"
+  self.table_name = "travels"
 end

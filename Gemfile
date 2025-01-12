@@ -52,13 +52,9 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
-group :development, :test do
-  gem "rspec-rails"
-  gem "capybara"
-  gem "factory_bot_rails"
-end
-
 group :test do
   gem "selenium-webdriver"
-  gem "webdrivers"
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "capybara"
 end

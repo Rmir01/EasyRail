@@ -68,9 +68,18 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  # devise (con warden)
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+  config.include Warden::Test::Helpers
+  config.before(:suite) { Warden.test_mode! }
+  config.after(:each) { Warden.test_reset! }
+
+  # factorybot
   config.include FactoryBot::Syntax::Methods
 
+  # capybara
   require 'capybara/rspec'
-  Capybara.javascript_driver = :selenium_chrome_headless
+  Capybara.javascript_driver = :selenium_chrome # senza headless
+  Capybara.default_max_wait_time = 5
   Capybara.server = :puma
 end
