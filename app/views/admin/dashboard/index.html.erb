@@ -1,0 +1,24 @@
+<div style="text-align:center; margin-top: 20px;">
+  <h3 style="margin-bottom: 20px;">INSERISCI DATI NEI DATABASE</h3>
+  <%= link_to "Inserisci i dati", root_path, class: "button" %>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 40px; margin-top: 40px; margin-bottom: 40px;">
+  <div style="text-align:center;">
+    <h3 style="margin-bottom: 20px;">DATABASE UTENTE</h3>
+    <%= link_to "Visualizza i dati", admin_users_path, class: "button" %>
+  </div>
+
+  <div style="text-align:center;">
+    <h3 style="margin-bottom: 20px;">DATABASE PREZZI</h3>
+    <%= link_to "Visualizza i dati", root_path, class: "button" %>
+  </div>
+
+  <div style="text-align:center;">
+    <h3 style="margin-bottom: 20px;">DATABASE PRENOTAZIONI</h3>
+    <%= link_to "Visualizza i dati", admin_tickets_path, class: "button" %>
+  </div>
+</div>
+
+
+

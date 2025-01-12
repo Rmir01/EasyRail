@@ -140,7 +140,7 @@
 </table>
 
 <% if @user.admin? %>
-	<%= link_to "AREA FUNZIONALITÁ AMMINISTRATORE", root_path, class: "button admin" %>
+	<%= link_to "AREA FUNZIONALITÁ AMMINISTRATORE", admin_dashboard_path, class: "button admin" %>
 <% end %>
 
 <%= submit_tag "Logout", class: "button logout", style: "background-color: rgb(180, 0, 0); width: 80px;" %>

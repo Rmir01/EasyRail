@@ -1,0 +1,23 @@
+<!-- app/views/admin/users/index.html.erb -->
+<h1 style="text-align: center;">Elenco Utenti</h1>
+
+<table style="width: 100%; border-collapse: collapse; text-align: left;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #ddd; padding: 8px;">Cognome</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">Nome</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">Email</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">Provider</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;"><%= user.surname %></td>
+        <td style="border: 1px solid #ddd; padding: 8px;"><%= user.name %></td>
+        <td style="border: 1px solid #ddd; padding: 8px;"><%= user.email %></td>
+        <td style="border: 1px solid #ddd; padding: 8px;"><%= user.provider %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

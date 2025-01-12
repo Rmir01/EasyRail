@@ -1,0 +1,30 @@
+<h1 style="text-align: center;">Elenco Prenotazioni</h1>
+
+<table class="table" style="margin: auto; width: 80%; text-align: center; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>Codice Biglietto</th>
+      <th>Email</th>
+      <th>Codice Treno</th>
+      <th>Stazione di Partenza</th>
+      <th>Orario di Partenza</th>
+      <th>Stazione di Arrivo</th>
+      <th>Orario di Arrivo</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.pnr %></td>
+        <td><%= ticket.email %></td>
+        <td><%= ticket.cod %></td>
+        <td><%= ticket.part %></td>
+        <td><%= ticket.hpar.strftime("%H:%M") %></td>
+        <td><%= ticket.dest %></td>
+        <td><%= ticket.harr.strftime("%H:%M") %></td>
+        <td><%= ticket.date.strftime("%d/%m/%Y")  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

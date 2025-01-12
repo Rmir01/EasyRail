@@ -16,4 +16,11 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(home)
       root_path
   end
+  private
+  def authorize_admin!
+    unless current_user&.admin?
+      flash[:alert] = "Non sei autorizzato ad accedere a questa sezione."
+      redirect_to root_path
+    end
+  end
 end

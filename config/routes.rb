@@ -27,6 +27,15 @@ Rails.application.routes.draw do
   get "tickets/edit_time/:pnr/:hpar/:harr", to: "tickets#edit_time", as: "ticket_edit_time"
   patch "tickets/update_time", to: "tickets#update_time", as: "ticket_update_time"
 
+  #dashboard admin
+  namespace :admin do
+    get 'dashboard', to: 'dashboard#index'
+    resources :users, only: [:index]
+    resources :tickets, only: [:index]
+  end
+  
+  
+
   # stato treno
   get "train_status", to: "train_status#index", as: "train_status"
   get "train_status/show", to: "train_status#show", as: "train_status_show"
