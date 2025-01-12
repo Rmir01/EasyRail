@@ -32,6 +32,12 @@ Rails.application.routes.draw do
     get 'dashboard', to: 'dashboard#index'
     resources :users, only: [:index]
     resources :tickets, only: [:index]
+    resources :travels, only: [] do
+      collection do
+        get :search # Per il form
+        post :results # Per i risultati
+      end
+    end
   end
   
   

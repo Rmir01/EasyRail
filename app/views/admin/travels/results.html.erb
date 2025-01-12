@@ -1,0 +1,33 @@
+<title>Tratte corrispondenti</title>
+<h3 style="text-align: center; margin-top: 30px;">Risultati della ricerca</h3>
+
+<% if @travels.any? %>
+  <table class="table" style="margin: auto; width: 80%; text-align: center; border-collapse: collapse; margin-bottom: 30px">
+    <thead>
+      <tr>
+        <th>Codice Treno</th>
+        <th>Partenza</th>
+        <th>Destinazione</th>
+        <th>Orario Partenza</th>
+        <th>Orario Arrivo</th>
+        <th>Prezzo Economy</th>
+        <th>Prezzo Prima Classe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @travels.each do |travel| %>
+        <tr>
+          <td><%= travel.cod %></td>
+          <td><%= travel.part %></td>
+          <td><%= travel.dest %></td>
+          <td><%= travel.hpar %></td>
+          <td><%= travel.harr %></td>
+          <td>€<%= travel.pe %></td>
+          <td>€<%= travel.pp %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p style="text-align: center; margin-top: 20px;">Nessun risultato trovato.</p>
+<% end %>
