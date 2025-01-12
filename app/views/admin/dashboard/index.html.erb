@@ -1,24 +1,25 @@
 <title>Dashboard Admin</title>
 
-<div style="text-align:center; margin-top: 20px;">
-  <h3 style="margin-bottom: 20px;">INSERISCI UN NUOVO TRENO</h3>
-  <%= link_to "Inserisci", root_path, class: "button" %>
-</div>
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 40px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align:center;">
-    <h3 style="margin-bottom: 20px;">DATABASE UTENTE</h3>
-    <%= link_to "Visualizza", admin_users_path, class: "button" %>
+    <h3 style="margin-bottom: 20px;">Mostra tutti gli utenti</h3>
+    <%= link_to "Visualizza utenti", admin_users_path, class: "button" %>
   </div>
 
   <div style="text-align:center;">
-    <h3 style="margin-bottom: 20px;">DATABASE PREZZI</h3>
-    <%= link_to "Visualizza", search_admin_travels_path, class: "button" %>
+    <h3 style="margin-bottom: 20px;">Mostra tutti i biglietti prenotati</h3>
+    <%= link_to "Visualizza biglietti", admin_tickets_path, class: "button" %>
   </div>
 
   <div style="text-align:center;">
-    <h3 style="margin-bottom: 20px;">DATABASE PRENOTAZIONI</h3>
-    <%= link_to "Visualizza", admin_tickets_path, class: "button" %>
+    <h3 style="margin-bottom: 20px;">Modifica i prezzi delle tratte</h3>
+    <%= link_to "Vai alla tabella tratte", search_admin_travels_path, class: "button" %>
+  </div>
+  
+  <div style="text-align:center; margin-top: 0;">
+    <h3 style="margin-bottom: 20px;">Crea un nuovo itinerario</h3>
+    <%= link_to "Crea Treno", root_path, class: "button" %>
   </div>
 </div>
 

@@ -1,13 +1,20 @@
+<style>
+  form {
+    text-align: center;
+  }
+</style>
+
 <title>Ricerca Tratta</title>
+
 <h3 style="margin-top: 30px; text-align: center;">Cerca viaggi</h3>
 
 <div style="text-align: center; margin-top: 20px;">
-  <%= form_with url: results_admin_travels_path, method: :post, local: true do |f| %>
+  <%= form_with url: results_admin_travels_path,method: :post, local: true do |f| %>
     <p>
       <%= f.label :part, "Da" %>
       <%= f.text_field :part, list: "stazioni", maxlength: 27, placeholder: "Inserisci stazione di partenza" %>
 
-      <button onclick="swapInputs()" class="swap" type="button">&rlarr;</button>
+      <button onclick="swap();" class="swap" type="button">&rlarr;</button>
 
       <%= f.label :arr, "A" %>
       <%= f.text_field :arr, list: "stazioni", maxlength: 27, placeholder: "Inserisci stazione di arrivo" %>
@@ -26,13 +33,3 @@
     <%= f.submit "Cerca", class: "button" %>
   <% end %>
 </div>
-
-<script>
-  function swapInputs() {
-    const partInput = document.getElementById("part");
-    const arrInput = document.getElementById("arr");
-    const temp = partInput.value;
-    partInput.value = arrInput.value;
-    arrInput.value = temp;
-  }
-</script>
