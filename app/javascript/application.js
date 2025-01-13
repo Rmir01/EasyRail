@@ -34,8 +34,8 @@ window.validaStz = function () {
     var c = 0;
     for (var i = 0; i < a.length; i++) {
         if (
-            stzPart.toLowerCase() == a[i].value.toLowerCase() ||
-            stzArr.toLowerCase() == a[i].value.toLowerCase()
+            stzPart == a[i].value ||
+            stzArr == a[i].value
         )
             c++;
     }

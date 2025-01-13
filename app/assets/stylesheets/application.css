@@ -116,7 +116,9 @@ input {
 }
 /*Checkbox Andata/Ritorno*/
 .checkbox { 
-	display: none;
+	display: flex;
+	position: absolute;
+	left: 10%;
 }
 .toggle {
 	position: relative;
