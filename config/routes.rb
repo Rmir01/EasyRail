@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     get "dashboard", to: "dashboard#index"
     resources :users, only: [ :index ]
     resources :tickets, only: [ :index ]
-    resources :travels, only: [] do
+    resources :travels, param: :cod, except: [:update] do
       collection do
         get :search # Per il form
         post :results # Per i risultati
@@ -44,12 +44,6 @@ Rails.application.routes.draw do
     end
   end
 
-<<<<<<< HEAD
-  
-  
-=======
-
->>>>>>> ce2cd1c3fe8eda1d1c9b9874149834cad48f483a
 
   # stato treno
   get "train_status", to: "train_status#index", as: "train_status"
