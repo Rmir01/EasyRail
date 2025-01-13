@@ -39,8 +39,8 @@ Rails.application.routes.draw do
         post :results # Per i risultati
       end
       member do
-        get 'edit_price/:cod/:part/:dest', to: 'travels#edit_price', as: :edit_price
-        patch 'update_price/:cod/:part/:dest', to: 'travels#update_price', as: :update_price
+        get "edit_price/:cod/:part/:dest", to: "travels#edit_price", as: :edit_price
+        patch "update_price/:cod/:part/:dest", to: "travels#update_price", as: :update_price
       end
     end
   end

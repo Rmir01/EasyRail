@@ -69,6 +69,7 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   # devise (con warden)
+  # config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include Warden::Test::Helpers
   config.before(:suite) { Warden.test_mode! }
@@ -76,10 +77,12 @@ RSpec.configure do |config|
 
   # factorybot
   config.include FactoryBot::Syntax::Methods
+  config.include Shoulda::Matchers::ActiveModel, type: :model
+  config.include Shoulda::Matchers::ActiveRecord, type: :model
 
   # capybara
   require 'capybara/rspec'
-  Capybara.javascript_driver = :selenium_chrome # senza headless
+  Capybara.javascript_driver = :selenium_chrome
   Capybara.default_max_wait_time = 5
   Capybara.server = :puma
 end
