@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     get "dashboard", to: "dashboard#index"
     resources :users, only: [ :index ]
     resources :tickets, only: [ :index ]
+    resources :trains, only: [:new, :create]
     resources :travels, param: :cod, except: [:update] do
       collection do
         get :search # Per il form

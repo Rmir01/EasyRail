@@ -22,12 +22,13 @@ module Admin
     def update_price
       attribute = params[:type] == 'economy' ? :pe : :pp
       if @travel.update(attribute => params[:new_price])
-        redirect_to  search_admin_travels_path, notice: "Prezzo aggiornato con successo!"
+        redirect_to search_admin_travels_path, flash: { travel_notice: "Prezzo aggiornato con successo!" }
       else
-        flash.now[:alert] = "Errore durante l'aggiornamento del prezzo."
+        flash.now[:travel_alert] = "Errore durante l'aggiornamento del prezzo."
         render :edit_price
       end
     end
+    
 
     private
 

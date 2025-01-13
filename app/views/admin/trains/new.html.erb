@@ -1,0 +1,65 @@
+<title>Crea Treno</title>
+<h2 style="text-align: center; padding-top: 15px;">Crea un nuovo Treno</h2>
+<!-- Messaggio di errore -->
+<% if flash[:train_alert] %>
+  <div class="alert alert-danger" style="margin: 20px; padding: 10px; color: red; background-color: #ffe6e6; border: 1px solid #cc9999;">
+    <%= flash[:train_alert] %>
+  </div>
+<% end %>
+
+
+<div style="max-width: 600px; margin: auto;">
+  <%= form_with url: admin_trains_path, method: :post, local: true do |form| %>
+    <div>
+      <%= form.label :id, "Codice Treno" %><br>
+      <%= form.number_field :id, required: true, name: "id" %>
+    </div>
+    <div>
+      <%= form.label :f0, "Fermata di Partenza" %><br>
+      <%= form.text_field :f0, required: true, list: "stazioni", name: "f0" %>
+    </div>
+    <div>
+      <%= form.label :f5, "Fermata di Arrivo" %><br>
+      <%= form.text_field :f5, required: true, list: "stazioni", name: "f5" %>
+    </div>
+    <datalist id="stazioni">
+      <option value="Bologna Centrale"></option>
+      <option value="Firenze Santa Maria Novella"></option>
+      <option value="Milano Centrale"></option>
+      <option value="Napoli Centrale"></option>
+      <option value="Roma Termini"></option>
+      <option value="Torino Porta Nuova"></option>
+      <option value="Venezia Santa Lucia"></option>
+    </datalist>
+    <div>
+      <%= form.label :hf0, "Orario di Partenza" %><br>
+      <%= form.time_field :hf0, required: true, name: "hf0" %>
+    </div>
+    <div>
+      <%= form.label :hf5, "Orario di Arrivo" %><br>
+      <%= form.time_field :hf5, required: true, name: "hf5" %>
+    </div>
+    <div>
+      <%= form.label :pe, "Prezzo Economy" %><br>
+      <%= form.number_field :pe, step: 0.01, required: true, name: "pe" %>
+    </div>
+    <div>
+      <%= form.label :pp, "Prezzo Prima Classe" %><br>
+      <%= form.number_field :pp, step: 0.01, required: true, name: "pp" %>
+    </div>
+    <%= form.submit "Crea Treno", class: "button" %>
+    <%= link_to "Annulla", "#", class: "button", onclick: "resetForm(event)" %>
+  <% end %>
+</div>
+
+<!-- Inline JavaScript -->
+<script>
+  function resetForm(event) {
+    event.preventDefault(); // Impedisce il comportamento predefinito del link
+    const form = event.target.closest("form"); // Trova il form associato
+    if (form) {
+      form.reset(); // Resetta i campi del form
+    }
+  }
+</script>
+
