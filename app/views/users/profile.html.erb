@@ -97,6 +97,7 @@
 						<% else %>
 							<div class="container mt-4">
 								<table class="table table-striped table-bordered align-middle">
+									<% @tickets = @tickets.order(:date, :hpar, :harr) %>
 									<% @tickets.each do |ticket| %>
 										<tr>
 											<td><%= ticket.pnr %></td>
@@ -118,10 +119,12 @@
 															<%= button_tag 'Stato Treno', class: "btn btn-info btn-sm", style: "margin-top: 5px;", disabled: true %>
 														<% end %>
 													</div>
-													<div>
-														<%= link_to "Modifica Orario", ticket_edit_time_path(pnr: ticket.pnr, hpar: ticket.hpar, harr: ticket.harr), method: :get, 
-														class: "btn btn-warning btn-sm", style: "margin-top: 5px;" %>
-													</div>
+													<% if ticket.date == Date.current && Time.now.in_time_zone("Rome").strftime('%H:%M') >= ticket.hpar %>
+														<div>
+															<%= link_to "Modifica Orario", ticket_edit_time_path(pnr: ticket.pnr, hpar: ticket.hpar, harr: ticket.harr), method: :get, 
+															class: "btn btn-warning btn-sm", style: "margin-top: 5px;" %>
+														</div>
+													<% end %>
 													<div>
 														<form action="<%= ticket_destroy_path(ticket.pnr) %>" method="post" class="inline-form">
 															<input type="hidden" name="_method" value="delete">

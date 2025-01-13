@@ -66,7 +66,6 @@ class TravelsController < ApplicationController
   end
 
   def confirmed_purchase
-
     # Creazione biglietto andata
     andata = Travel.find_by(
       cod: params[:andata_cod],

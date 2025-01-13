@@ -32,14 +32,14 @@ Rails.application.routes.draw do
     get "dashboard", to: "dashboard#index"
     resources :users, only: [ :index ]
     resources :tickets, only: [ :index ]
-    resources :travels, param: :cod, except: [:update] do
+    resources :travels, param: :cod, except: [ :update ] do
       collection do
         get :search # Per il form
         post :results # Per i risultati
       end
       member do
-        get 'edit_price/:cod/:part/:dest', to: 'travels#edit_price', as: :edit_price
-        patch 'update_price/:cod/:part/:dest', to: 'travels#update_price', as: :update_price
+        get "edit_price/:cod/:part/:dest", to: "travels#edit_price", as: :edit_price
+        patch "update_price/:cod/:part/:dest", to: "travels#update_price", as: :update_price
       end
     end
   end
