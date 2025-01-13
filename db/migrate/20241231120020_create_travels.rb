@@ -12,7 +12,7 @@ class CreateTravels < ActiveRecord::Migration[8.0]
 
     add_check_constraint :travels, "pe > 0", name: "min_price_check"
 
-    add_check_constraint :travels, "pp = pe + 10", name: "p_e_price_check"
+    add_check_constraint :travels, "pp > pe", name: "p_e_price_check"
 
     add_foreign_key :travels, :trains, column: :cod, primary_key: :id
   end

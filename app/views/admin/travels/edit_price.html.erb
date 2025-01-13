@@ -1,0 +1,20 @@
+<title>Modifica prezzo</title>
+<h2 style="text-align: center;">Modifica Prezzo</h2>
+
+<div style="max-width: 600px; margin: auto;">
+  <p><strong>Tratta:</strong> <%= @travel.part %> - <%= @travel.dest %></p>
+  <p><strong>Codice Treno:</strong> <%= @travel.cod %></p>
+  <%= form_with url: update_price_admin_travel_path(cod: @travel.cod, part: @travel.part, dest: @travel.dest), method: :patch, local: true do |form| %>
+    <%= form.hidden_field :type, value: @type %>
+    
+    <div style="margin-bottom: 20px; text-align: center;">
+    <%= form.label :new_price, "Nuovo prezzo per #{@type == 'economy' ? 'Economy' : 'Prima Classe'}", style: "display: block; margin-bottom: 10px;" %>
+    <%= form.number_field :new_price, step: 0.01, required: true, style: "text-align: center;" %>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+    <%= form.submit "Aggiorna Prezzo", class: "button", style: "margin-right: 10px; padding: 10px 20px;" %>
+    <%= link_to "Annulla", search_admin_travels_path, class: "button", style: "padding: 10px 20px;" %>
+    </div>
+  <% end %>
+</div>

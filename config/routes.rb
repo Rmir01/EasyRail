@@ -27,18 +27,23 @@ Rails.application.routes.draw do
   get "tickets/edit_time/:pnr/:hpar/:harr", to: "tickets#edit_time", as: "ticket_edit_time"
   patch "tickets/update_time", to: "tickets#update_time", as: "ticket_update_time"
 
-  #dashboard admin
+  # dashboard admin
   namespace :admin do
     get 'dashboard', to: 'dashboard#index'
     resources :users, only: [:index]
     resources :tickets, only: [:index]
-    resources :travels, only: [] do
+    resources :travels, param: :cod, except: [:update] do
       collection do
         get :search # Per il form
         post :results # Per i risultati
       end
+      member do
+        get 'edit_price/:cod/:part/:dest', to: 'travels#edit_price', as: :edit_price
+        patch 'update_price/:cod/:part/:dest', to: 'travels#update_price', as: :update_price
+      end
     end
   end
+
   
   
 

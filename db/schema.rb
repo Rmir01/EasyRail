@@ -54,7 +54,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_12_083344) do
     t.integer "pe", null: false
     t.integer "pp", null: false
     t.check_constraint "pe > 0", name: "min_price_check"
-    t.check_constraint "pp = pe + 10", name: "p_e_price_check"
+    t.check_constraint "pp > pe", name: "p_e_price_check"
   end
 
   create_table "users", primary_key: "email", id: :string, default: "", force: :cascade do |t|
