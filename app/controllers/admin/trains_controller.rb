@@ -4,7 +4,7 @@ module Admin
         @train = Train.new
         @travel = Travel.new
       end
-  
+
       def create
         @train = Train.new(
           id: params[:id],
@@ -13,7 +13,7 @@ module Admin
           hf0: params[:hf0],
           hf5: params[:hf5]
         )
-  
+
         @travel = Travel.new(
           cod: params[:id],
           part: params[:f0],
@@ -23,7 +23,7 @@ module Admin
           pe: params[:pe],
           pp: params[:pp]
         )
-  
+
         # Verifica se l'ID esiste già
         if Train.exists?(id: params[:id])
           flash.now[:train_alert] = "Errore: il codice treno già esiste."
@@ -50,7 +50,4 @@ module Admin
         end
       end
     end
-  end
-  
-  
-  
+end

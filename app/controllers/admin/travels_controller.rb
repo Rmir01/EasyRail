@@ -28,7 +28,7 @@ module Admin
         render :edit_price
       end
     end
-    
+
 
     private
 

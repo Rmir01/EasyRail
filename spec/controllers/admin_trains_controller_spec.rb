@@ -28,16 +28,14 @@ RSpec.describe Admin::TrainsController, type: :controller do
 
     describe "POST #create" do
         it "mostra errore quando il codice del treno esiste già" do
-          create(:train, id: 1000)
-
           post :create, params: {
             id: 1000,
             f0: "Roma Termini",
             f5: "Milano Centrale",
             hf0: "08:00",
             hf5: "10:00",
-            pe: 30.0,
-            pp: 50.0
+            pe: 30,
+            pp: 50
           }
 
           expect(response).to render_template(:new)
