@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
         admin_user = create(:user, admin: true) # FactoryBot genera un utente con admin: true
         expect(admin_user.admin?).to be true
       end
-  
+
       it "returns false if the user is not an admin" do
         normal_user = create(:user, admin: false) # FactoryBot genera un utente con admin: false
         expect(normal_user.admin?).to be false
@@ -17,6 +17,3 @@ RSpec.describe User, type: :model do
       end
     end
   end
-  
-  
-  

@@ -13,7 +13,7 @@ class TicketsController < ApplicationController
   def edit_time
     if @ticket.date == Date.current
       @available_travels = Travel.where(part: @ticket.part, dest: @ticket.dest)
-                               .where("hpar > ?", Time.current.strftime("%H:%M"))
+                               .where("hpar > ?", Time.now.in_time_zone("Rome").strftime("%H:%M"))
     else
       @available_travels = Travel.where(part: @ticket.part, dest: @ticket.dest)
     end
