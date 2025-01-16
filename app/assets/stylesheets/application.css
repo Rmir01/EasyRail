@@ -118,7 +118,8 @@ input {
 .checkbox { 
 	display: flex;
 	position: absolute;
-	left: 10%;
+	left: 50%;
+	opacity: 0.001;
 }
 .toggle {
 	position: relative;
